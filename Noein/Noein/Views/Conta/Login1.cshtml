@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link href="~/Content/Conta/Login1.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Personalizados/Conta/Login1.js" ></script>
+    <title>Login - Etapa 1</title>
+</head>
+<body id="Login1">
+    <div class="Div_Body_Login">
+        <div class="Div_Logo">
+            <img class="Imagem_Logo" alt="LogoNoein" src="~/Images/noein.ico" />
+        </div>
+        <div class="Div_Login">
+            <div class="Div_Login_Email">
+                <input id="Login_Email" name="Login_Email" class="Input_Login_Email" type="email" value="Digite aqui o e-mail">
+            </div>
+            <div class="Div_Login_Senha">
+                <input id="Login_Senha" name="Login_Senha" class="Input_Login_Senha" type="password" value="Digite aqui sua senha">
+            </div>
+            <div class="Esqueceu_Senha">Esqueceu a senha?</div>
+            <button id="Botao_Login1_Fazer_Login" class="BotaoPadrao" type="submit" disabled>Fazer Login</button>
+        </div>
+    </div>    
+
+    <div id="ModalMensagem" class="modal fade" role="dialog" hidden>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ModalHeaderPadrao">
+                    <p class="modal-title ModalMensagemTituloModal" id="ModalMensagemTituloModal"></p>
+                </div>
+                <div class="modal-body ModalBodyPadrao">
+                </div>
+                <div class="ModalFooterPadrao">
+                    <button id="BotaoFecharModalMensagem" class="BotaoPadrao" hidden>Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<NoeinModel.Campeonato>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link href="~/Content/Conta/Login2.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Personalizados/Conta/Login2.js" ></script>
+    <title>Login - Etapa 2</title>
+</head>
+<body id="Login2">
+    <div class="Div_Body_Login">
+        <div class="Div_Logo">
+            <img class="Imagem_Logo" alt="LogoNoein" src="~/Images/noein.ico" />
+        </div>
+        <div class="Div_Login">
+            <div class="Div_Ola_Usuario">
+                Olá @ViewBag.NomeUsuario,
+            </div>
+            <div class="Div_Campeonato">
+                <select id="Login_Campeonato" name="Login_Campeonato" class="Select_Login_Campeonato" onchange="AlteracaoSelecaoCampeonato()">
+                    <option value="">Selecione um Campeonato</option>
+                    @if (Model != null)
+                    {
+                        foreach (var campeonato in Model)
+                        {
+                            <option value="@campeonato.IdCampeonato">@campeonato.DescricaoCampeonato</option>
+                        }
+                    }
+                </select>
+            </div>
+            <button id="Botao_Login2_Acessar" class="BotaoPadrao" disabled>Acessar</button>
+        </div>
+    </div>
+        
+    <div id="ModalMensagem" class="modal fade" role="dialog" hidden>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header ModalHeaderPadrao">
+                    <p class="modal-title ModalMensagemTituloModal" id="ModalMensagemTituloModal"></p>
+                </div>
+                <div class="modal-body ModalBodyPadrao">
+                </div>
+                <div class="ModalFooterPadrao">
+                    <button id="BotaoFecharModalMensagem" class="BotaoPadrao" hidden>Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

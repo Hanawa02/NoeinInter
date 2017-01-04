@@ -1,0 +1,150 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: rgb(168,207,237);
+    Cor da borda clara: rgb(213,232,247);
+    Background Botao: rgb(213,232,247);
+    Fonte Padrão: Nova Flat
+*/
+#Login1{
+    font-family: 'Nova Flat', cursive; !important;
+}
+
+#Login1 .Div_Body_Login {
+    margin-top: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 1px solid #2688d2;
+    text-align: center;
+    border-radius: 3px;
+}
+
+/*----------- Logo ------------*/
+#Login1 .Div_Logo{
+    padding-top: 20px;
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+#Login1 .Imagem_Logo{
+    width: 100%;
+    height: 100%;
+    /*Resetando itens do bootstrap*/
+    box-sizing: unset;
+}
+
+/*----------- Log in ------------*/
+#Login1 .Div_Login {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: inline-block;
+    width: 100%;
+}
+
+/*----------- E-mail ------------*/
+#Login1 .Div_Login_Email{
+    padding: 5px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#Login1 .Input_Login_Email {
+    width: 80%;
+    text-align:center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px;
+}
+
+/*----------- Senha ------------*/
+#Login1 .Div_Login_Senha{
+    padding: 5px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#Login1 .Input_Login_Senha{
+    width: 80%;
+    text-align:center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px;
+}
+
+/*----------- Esqueceu a Senha ------------*/
+#Login1 .Esqueceu_Senha {
+    padding-right: 5px;
+    width: 40%;
+    font-size: 10px;
+    color: #2688d2;
+    text-align: right;
+    margin:0 auto;
+}
+
+#Login1 .Esqueceu_Senha:hover {
+    cursor: pointer;
+}
+
+/*----------- Botão ------------*/
+#Login1 .BotaoPadrao{
+    margin: 5px;
+    background-color: rgb(213,232,247);
+    border: 2px solid rgb(213,232,247);
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Login1 .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Login1 .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: rgb(168,207,237);
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+    
+/*----------- Modal Mensagem ------------*/
+#Login1 #ModalMensagem{
+    border: 1px solid #2688d2;
+    border-radius: 3px;
+}
+
+#Login1 .ModalHeaderPadrao{
+    border-bottom: 1px solid rgb(213,232,247);
+    min-height: 16.428571429px;
+    padding:10px;
+    background-color: rgb(213,232,247);
+    border-top-left-radius:6px;    
+    border-top-right-radius:6px;    
+}
+
+#Login1 .ModalMensagemTituloModal{
+    font-size: 18px;
+    text-align: center;
+    color: #2688d2;
+    font-weight:bold;
+}
+
+#Login1 .ModalBodyPadrao{
+    color: #2688d2;
+    text-align: center;
+}
+                
+#Login1 .ModalFooterPadrao {
+    text-align:center;
+    margin: 0 auto;
+    border-top: 1px solid rgb(213,232,247);
+}
+
+#Login1 #BotaoFecharModalMensagem {
+
+}

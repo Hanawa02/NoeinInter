@@ -1,0 +1,1 @@
+Insert Into MensagensPadrao (1, 'Falha', 'E-mail e/ou senha inválidos! Tente Novamente!');

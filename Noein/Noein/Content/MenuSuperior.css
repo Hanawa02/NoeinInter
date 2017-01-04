@@ -1,0 +1,39 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: rgb(168,207,237);
+    Cor da borda clara: rgb(213,232,247);
+    Background Botao: rgb(213,232,247);
+    Fonte Padrão: Nova Flat
+*/
+
+#MenuSuperior {
+    background-color: #2688d2;
+    font-family: 'Nova Flat', cursive; !important;
+      
+}
+
+
+#MenuSuperior .container{
+
+}
+
+#MenuSuperior .navbar-header {
+
+}
+
+
+#MenuSuperior .navbar-toggle {
+
+}
+
+
+#MenuSuperior .icon-bar {
+
+}
+
+#MenuSuperior .ElementoMenuSuperior{
+    color: rgb(213,232,247);  
+}
