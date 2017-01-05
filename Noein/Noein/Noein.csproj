@@ -145,6 +145,7 @@
     </Content>
     <Content Include="Scripts\Personalizados\Conta\Login2.js" />
     <Content Include="Scripts\Personalizados\MenuSuperior.js" />
+    <Content Include="Scripts\Personalizados\Quadras.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,6 +177,7 @@
     <Content Include="fonts\NovaFlat.ttf" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Noein\Index.cshtml" />
+    <Content Include="Views\Noein\Quadras.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NoeinModel\NoeinModel.csproj">

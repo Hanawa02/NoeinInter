@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Campeonato.cs" />
+    <Compile Include="Enum\EnumModalidadesBasicas.cs" />
     <Compile Include="Geral\Mensagem.cs" />
+    <Compile Include="Horario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quadra.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

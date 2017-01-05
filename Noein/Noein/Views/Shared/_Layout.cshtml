@@ -11,8 +11,14 @@
     <script type="text/javascript" src="~/Scripts/Personalizados/MenuSuperior.js"></script>
 </head>
 <body>
-    <div id="MenuSuperior" class="navbar navbar-inverse navbar-fixed-top">
+    <p id="NomeUsuario" hidden>@ViewBag.NomeUsuario</p>
+    <p id="IdUsuario" hidden>@ViewBag.IdUsuario</p>
+    <p id="NomeCampeonato" hidden>@ViewBag.NomeCampeonato</p>
+    <div id="MenuSuperior" class="navbar">
         <div class="container">
+            <div class="Div_Logo_Menu_Superior">
+                <img class="Imagem_Logo_Menu_Superior" alt="LogoNoein" src="~/Images/noein.ico" />
+            </div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -22,26 +28,42 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="ElementoMenuSuperior">@Html.ActionLink("Noein", "Index", "Noein")</li>
-                    <li>@Html.ActionLink("Noein", "Times", "Noein")</li>
-                    <li>@Html.ActionLink("Quadras", "Noein")</li>
-                    <li>@Html.ActionLink("ChaveDeClassificacao", "Noein")</li>
-                    <li>@Html.ActionLink("Horarios", "Noein")</li>
-                    <li>@Html.ActionLink("Resultados", "Noein")</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Index">Index</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Times">Times</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Quadras">Quadras</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Chave_De_Classificacao">Chave De Classificacao</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Horarios">Horarios</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Resultados">Resultados</li>
                 </ul>
             </div>
+            <div class="InformacoesContaUsuario">
+                <div class="OlaUsuario">
+                    Olá, @ViewBag.Usuario
+                </div>
+                <div class="SuaConta">
+                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    Sua Conta
+                </div>
+                <div class="Sair_Campeonato_Menu_Superior">
+                    Sair
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="NomeCampeonato">
+        @ViewBag.NomeCampeonato
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Noein</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    @RenderSection("css", required: false)
 </body>
 </html>

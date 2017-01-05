@@ -18,3 +18,18 @@ Create Table MensagensPadrao (
 	Mensagem varchar(1280),
 	Primary Key (IdMensagem)
 )
+
+Create Table Quadra (
+	IdCampeonato Int Foreign Key References Campeonatos(IdCampeonato),
+	IdQuadra Int Not Null Identity(1,1),
+	DescricaoQuadra varchar(150),
+	Localizacao varchar(300),
+	Primary Key (IdQuadra, IdCampeonato)
+)
+
+Create Table ModalidadesVisiveis(
+	IdCampeonato Int Foreign Key References Campeonatos(IdCampeonato),
+	CodigoModalidadeBase Int,
+	Visivel Bit,
+	Primary Key (IdCampeonato, CodigoModalidadeBase)
+)

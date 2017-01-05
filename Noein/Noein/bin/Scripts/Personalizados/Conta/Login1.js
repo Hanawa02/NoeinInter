@@ -38,7 +38,7 @@
         MostrarBotaoFecharModalMensagem(false);
         var email = $('.Input_Login_Email').get(0).value;
         var senha = $('.Input_Login_Senha').get(0).value;
-        
+        /* Trocar para post */
         $.getJSON('RealizarLogin', { Email: email, Senha: senha }, function (retorno) {
             InvocaModalMensagem(retorno.mensagemRetorno.TituloMensagem, retorno.mensagemRetorno.RetornoMensagens);
             MostrarBotaoFecharModalMensagem(true);
