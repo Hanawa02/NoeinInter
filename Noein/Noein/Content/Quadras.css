@@ -1,0 +1,429 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+#Quadras {
+    margin-top: 20px;
+}
+
+/* Menu Quadras*/
+#Quadras .MenuQuadras {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#Quadras .OpcoesQuadra{
+
+    display: inline-block;
+}
+
+/*----------- Botão ------------*/
+#Quadras .BotaoPadrao{
+    margin: 5px;
+    background-color: rgb(213,232,247);
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Quadras .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Quadras .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: rgb(168,207,237);
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+#Quadras .BotaoPesquisa {
+    cursor:pointer;
+}
+
+/* Pesquisa*/
+
+#Quadras #InputPesquisaQuadra {
+    margin-left: 75px;
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 5px; 
+}
+#Quadras #InputPesquisaQuadra:disabled {
+    margin-left: 75px;
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Quadras #PesquisaQuadra {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Quadras #PesquisaQuadra:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+#Quadras #LimpaCampoPesquisa {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Quadras #LimpaCampoPesquisa:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+/* Lista de Quadras */
+
+#Quadras .ListaDeQuadras {
+    width: 70%;
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 3px;
+    border: 2px solid #7cb7e4;
+}
+
+#Quadras .CabecalhoListaDeQuadras {
+    color: #2688d2;
+    background-color: rgb(168,207,237);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#Quadras .CabecalhoIdQuadra {
+    display: inline-block;
+    width:5%;
+}
+            
+#Quadras .CabecalhoDescricaoQuadra {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Quadras .CabecalhoLocalizacao {
+    display: inline-block;
+    width: 55%;
+    text-align: left;
+}
+
+#Quadras .ItemListaQuadra {
+    color: #2688d2;
+}
+
+#Quadras .InformacoesQuadra {
+    border-top: 2px solid #7cb7e4;
+    border-bottom: 2px solid #7cb7e4;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    cursor: pointer;
+    background-color: #e9f3fa; 
+}
+
+#Quadras .InformacoesQuadra:hover {
+    border-top: 2px solid #7cb7e4;
+    border-bottom: 2px solid #7cb7e4;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    cursor: pointer;
+    background-color: #e9f3fa; 
+    font-weight: 600;
+    }
+       
+#Quadras .IdQuadra {
+    display: inline-block;
+    width:5%;
+}
+            
+#Quadras .DescricaoQuadra {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Quadras .Localizacao {
+    display: inline-block;
+    width: 55%;
+    text-align: left;
+}        
+
+#Quadras .ModalidadesQuadra{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+}
+
+#Quadras .ItemModalidade {
+    display: inline-block;
+    width: 23%;
+    text-align: left;
+    padding: 5px;
+}
+
+#Quadras .ItemModalidade:hover {
+    display: inline-block;
+    width: 23%;
+    text-align: left;
+    padding: 5px;
+    font-weight: 600;
+}
+
+#Quadras .ListaVazia {
+    color: #2688d2;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    text-align: center;
+}
+
+
+#Quadras #ModalCadastraQuadra{
+    
+}
+
+#Quadras #ModalCadastraQuadra .modal-dialog {
+    width: 60%;    
+}
+
+#Quadras .modal-content {
+    border-radius: 20px;
+}
+
+#Quadras .ModalHeaderPadrao {
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    background-color: #2688d2;
+    color: #D5E8F7;
+    height: 30px;
+    padding: 5px;
+    text-shadow: 0 1px 0 #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+#Quadras .ModalCadastraQuadraTituloModal { 
+}
+
+#Quadras .ModalBodyPadrao {
+    color: #2688d2;
+}
+
+#Quadras .CadastraQuadra_InformacoesQuadra{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#Quadras #CadastraQuadra_Descricao{
+    width: 33%;
+    text-align:center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px;
+    margin-right: 15px;
+}
+
+#Quadras #CadastraQuadra_Localizacao{
+    width: 33%;
+    text-align:center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px;
+}
+
+#Quadras .CadastraQuadra_Modalidades{
+    padding: 10px;
+}
+
+#Quadras .CadastraQuadra_ItemModalidade{
+    display: inline-block;
+    width: 23%;
+    padding:3px;
+}
+
+#Quadras .DivBotaoCadastraQuadra{
+    text-align: center;
+}
+
+#Quadras #BotaoCadastraQuadra{
+
+}
+
+#Quadras .close{
+    margin-top: 3px;
+    margin-right: 7px;
+    color: rgb(168,207,237);
+    opacity: 1;
+    text-shadow: 0 1px 0 #fff;
+}
+
+#Quadras input[type="radio" i] {
+    margin-right: 5px;
+    background-color: #fff;
+    background-image: url(../Images/BackGroundRadioButton.png);
+}
+
+#Quadras input[type="radio" i]:checked {
+    margin-right: 5px;
+    background-color: #fff;
+    background-image: url(../Images/BackGroundRadioButton.png);
+}
+
+#Quadras .ModalRemoveQuadraTituloModal {
+    
+}
+
+#Quadras .DivBotaoRemoveQuadra{
+    text-align:center;
+}
+
+#Quadras .ListaQuadrasRemover{
+    text-align:center;
+    margin-bottom: 15px;
+}
+
+#Quadras #ListaQuadras {
+    width: 75%;
+    color: #2688d2;
+    text-align-last: center;
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+#Quadras .ListaHorarioQuadras{
+    border-top: 1px solid #2688d2;
+}
+
+#Quadras #ModalFuncaoHorarioQuadra{
+
+}
+
+#Quadras .ModalFuncaoHorarioQuadraTituloModal{
+
+}
+
+#Quadras .ListaQuadrasFuncaoHorario{
+    text-align:center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #2688d2;
+}
+
+#Quadras .DivCadastroHorarioQuadra{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#Quadras .Horario_Cadastrar{
+
+}
+
+#Quadras .LabelCadastraHorario{
+    width: 45%;
+    display: inline-block;
+}
+
+#Quadras .InputCadastraHorario{
+    width: 45%;
+    display: inline-block;
+}
+
+#Quadras #CadastraHorario_HorarioInicio{
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px; 
+    width: 95%;
+}
+
+#Quadras #CadastraHorario_HorarioInicio:disabled {
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Quadras #CadastraHorario_HorarioTermino{
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px; 
+    width: 95%;
+}
+
+#Quadras #CadastraHorario_HorarioTermino:disabled {
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Quadras #CadastraHorario_Intervalo{
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #2688d2;
+    border-radius: 3px; 
+    width: 95%;
+}
+
+#Quadras #CadastraHorario_Intervalo:disabled {
+    text-align: center;
+    border: 2px solid rgb(168,207,237);
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Quadras .DivBotaoCadastraHorarioQuadra{
+    text-align: center;
+    padding: 3px;
+}
+
+#Quadras .ListaHorarioQuadras{
+
+}
+
+#Quadras .Quadra_Horario{
+
+}
+
+#Quadras .Titulo {
+    text-align: center;
+    font-size: 15px;
+    background-color: #D5E8F7;
+    margin:3px;
+}
+
+#Quadras .ListaHorarios{
+
+}
+
+#Quadras #ModalFuncaoHorarioQuadra .modal-dialog {
+    width: 60%;    
+}

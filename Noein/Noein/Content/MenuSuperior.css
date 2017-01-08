@@ -46,19 +46,27 @@
     margin-top: 30px;
     cursor: pointer;
 }
+#MenuSuperior .ElementoMenuSuperior:hover{
+    color: #fff; 
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 30px;
+    cursor: pointer;
+}
 
-.Div_Logo_Menu_Superior{
+#MenuSuperior .Div_Logo_Menu_Superior{
     float: left;
     margin-top:3px;
     margin-right: 30px;
 }
 
-.Imagem_Logo_Menu_Superior{
+#MenuSuperior .Imagem_Logo_Menu_Superior{
      width: 70px;
     height: 70px;
 }
 
-.InformacoesContaUsuario {
+#MenuSuperior .InformacoesContaUsuario {
     float: right;
     margin-top:3px;
     display: inline;
@@ -68,19 +76,33 @@
     font-size:12px;
 }
 
-.OlaUsuario{
+#MenuSuperior .OlaUsuario{
     cursor:default;
 }
 
-.SuaConta{
+#MenuSuperior .SuaConta{
     cursor:pointer;
 }
 
-.Sair_Campeonato_Menu_Superior {
+#MenuSuperior .SuaConta:hover{
+    cursor:pointer;
+    color: #fff;
+    font-weight: bold;
+}
+
+#MenuSuperior .Sair_Campeonato_Menu_Superior {
     cursor:pointer;
     display: inline-block;
 }
-.navbar-collapse {
+
+#MenuSuperior .Sair_Campeonato_Menu_Superior:hover {
+    cursor:pointer;
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+}
+
+#MenuSuperior .navbar-collapse {
     float:left;    
 }
 
@@ -88,11 +110,37 @@
     background-color: #3b93d6;
     height: 25px;
     margin-top:75px;
-    color: #D5E8F7; 
+    color: #fff; 
     text-align: center;
     font-size: 18px;
 }
 
-.Ativo {
+
+.UFG {
+    color: #3b93d6;
+}
+
+.UFG:hover {    
+    color: #fff;
+}
+
+#MenuSuperior .Ativo {
     text-decoration:underline;
 }
+
+.TituloPagina {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color:#D5E8F7;
+    font-size: 20px;
+    color: #2688d2;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.Rodape {
+    margin-top: 25px;
+    color: #2688d2;
+}   

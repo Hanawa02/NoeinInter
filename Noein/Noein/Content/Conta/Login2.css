@@ -3,9 +3,9 @@
     Azul padrão: #2688d2;
     Borda contrastante com o azul padrão: #1f6ca8;
     Cor da fonte no azul padrão: #e5e5e5;
-    Cor da borda escura: rgb(168,207,237);
-    Cor da borda clara: rgb(213,232,247);
-    Background Botao: rgb(213,232,247);
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
     Fonte Padrão: Nova Flat
 */
 #Login2{
@@ -86,7 +86,7 @@
     background-color: rgb(168,207,237);
     border: 2px solid #2688d2;    
     border-radius: 5px;
-}f
+}
 
 /*----------- Modal Mensagem ------------*/
 #Login2 #ModalMensagem{

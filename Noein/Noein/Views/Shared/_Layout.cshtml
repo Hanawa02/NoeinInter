@@ -51,12 +51,21 @@
         </div>
     </div>
     <div class="NomeCampeonato">
-        @ViewBag.NomeCampeonato
+        @if (ViewBag.NomeCampeonato == "Inter")
+        {
+            @ViewBag.NomeCampeonato <span class="UFG">UFG</span>
+
+        }
+        else
+        {
+            @ViewBag.NomeCampeonato
+        }
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        
+        <footer class="Rodape">
+            <hr />
             <p>&copy; @DateTime.Now.Year - Noein</p>
         </footer>
     </div>
@@ -64,6 +73,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @RenderSection("css", required: false)
+    @RenderSection("Styles", required: false)
 </body>
 </html>

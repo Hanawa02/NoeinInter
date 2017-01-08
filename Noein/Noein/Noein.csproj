@@ -133,10 +133,12 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Conta\Login2.css" />
     <Content Include="Content\Conta\Login1.css" />
+    <Content Include="Content\Quadras.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\MenuSuperior.css" />
+    <Content Include="Images\BackGroundRadioButton.png" />
     <Content Include="Images\noein.ico" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

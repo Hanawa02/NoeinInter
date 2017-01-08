@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NoeinModel.Enum;
+using NoeinModel.Geral;
 
 namespace NoeinModel
 {
@@ -15,7 +15,7 @@ namespace NoeinModel
 
         private List<Quadra> ListaDeQuadras { get; set; }
 
-        //private List<EnumModalidadesBasicas> ListaModalidadesVisiveis { get; set; }
+        //private List<ModalidadesBasicas> ListaModalidadesVisiveis { get; set; }
 
         public Campeonato(int idCampeonato, string descricaoCampeonato)
         {
