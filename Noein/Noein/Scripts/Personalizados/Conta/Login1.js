@@ -48,10 +48,11 @@
         });
     });
 
+    /* Modal Mensagem */
     function InvocaModalMensagem(Titulo, Mensagem) {
         $('#ModalMensagemTituloModal').get(0).innerText = Titulo;
-        $('.ModalBodyPadrao').get(0).innerHTML = "";
-        $('.ModalBodyPadrao').append('<p>' + Mensagem + '</p>');
+        $('#ModalMensagemPrincipal .ModalBodyPadrao').get(0).innerHTML = "";
+        $('#ModalMensagemPrincipal .ModalBodyPadrao').append('<p>' + Mensagem + '</p>');
         $('#ModalMensagem').modal('show');
     }
 
@@ -64,6 +65,6 @@
     }
 
     $('#BotaoFecharModalMensagem').click(function () {
-        $('#ModalMensagem').modal('hide');
+        $('#ModalMensagemPrincipal').modal('hide');
     });
 });

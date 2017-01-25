@@ -1,0 +1,89 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+#HorarioJogos {
+    margin-top: 150px;
+    font-family: 'Nova Flat';
+    color: #2688d2;
+}
+
+
+/*----------- Botão ------------*/
+#HorarioJogos .BotaoPadrao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#HorarioJogos .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#HorarioJogos .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+
+#HorarioJogos .celulaVaziaQuadra {
+    background-color: #D5E8F7;
+}
+
+#HorarioJogos .celulaVaziaData {
+    background-color: #92c3e8;
+}
+
+#HorarioJogos .celulaData {
+    text-align: center;
+    font-size: 18px;
+    background-color: #92c3e8;
+    padding: 3px;
+    border-right: 1px dotted #fff;   
+}
+
+#HorarioJogos .celulaQuadra {
+    text-align: center;
+    background-color: #D5E8F7;
+    border-right: 1px dotted #fff;   
+    padding: 3px;
+    font-size: 16px;
+}
+
+#HorarioJogos .celulaJogo {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #2688d2;
+    font-size: 15px;
+    background-color: #f4f9fc;  
+}
+
+#HorarioJogos .HorarioSemJogo {
+    border: 1px solid #2688d2;
+}
+
+#HorarioJogos .celulaHorario {
+    width: 25px;
+    padding: 3px;
+    border: 1px solid #2688d2;
+    font-size: 15px;
+}
+
+#HorarioJogos .TabelaDeHorarios {
+    border: 1px solid #2688d2;
+    margin: 0 auto;
+    min-width: 60%;
+}

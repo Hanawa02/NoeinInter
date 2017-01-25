@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Resultados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<NoeinModel.Jogo>
+
+@section Styles {
+    <link href="~/Content/Resultados.css" rel="stylesheet" type="text/css" />
+}
+<div class="TituloPagina">Resultados</div>
+
+<div name="Body" id="Resultados">
+    <div class="OpcoesResultados">
+        Filtrar por Data:
+        <input type="date" id="FiltraPorData"/>
+        Filtrar por Modalidade:
+        <input type="text" id="FiltrarPorModalidade"/>
+
+        <button class="BotaoPadrao" id="SalvarResultados">Salvar Resultados</button>        
+    </div>
+    <table id="ListaJogos">
+        <tr class="CabecalhoListaJogos">
+            <td class="IdJogoCabecalho">Jogo</td>
+            <td class="HorarioJogoCabecalho">Data-Hora Inicio</td>
+            <td class="ModalidadeJogoCabecalho">Modalidade</td>
+            <td class="Time1Cabecalho">Time 1</td>
+            <td class="Time2Cabecalho">Time 2</td>
+        </tr>
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var jogo in Model)
+                {
+                    <tr class="ItemListaJogos">
+                        <td class="IdJogo">@jogo.IdJogo</td>
+                        <td class="HorarioJogo">@jogo.HorarioJogo.Inicio.ToString("dd-MM-yyyy hh:mm")</td>
+                        <td class="ModalidadeJogo">@jogo.ModalidadeJogo.DescricaoModalidade</td>
+                        <td colspan="2" >
+                            <table class="TableTimesResultados">
+                                <tr>
+                                    <td class="Time1">@jogo.Time1.NomeTime</td>
+                                    <td class="Pontuacoes">
+                                        <div class="PontuacaoPrincipal">
+                                            <div class="ResultadoTime1"><input type="number" min="0" class="InputResultadoTime1" value="@jogo.PontuacaoTime1" /></div>
+                                            X
+                                            <div class="ResultadoTime2"><input type="number" min="0" class="InputResultadoTime2" value="@jogo.PontuacaoTime2" /></div>
+                                        </div>
+                                        <div class="PontuacaoAdicional">
+                                            <div class="ResultadoTime1"><input type="number" min="0" class="InputResultadoAdicionalTime1" value="@jogo.PontuacaoAdicionalTime1" /></div>
+                                            X
+                                            <div class="ResultadoTime2"><input type="number" min="0" class="InputResultadoAdicionalTime2" value="@jogo.PontuacaoAdicionalTime2" /></div>
+                                        </div>
+                                    </td>
+                                    <td class="Time2">@jogo.Time2.NomeTime</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr><td colspan="5" class="ListaVazia">Não existem jogos cadastrados.</td></tr>
+            }
+    </table>
+
+    @section scripts {
+        <script type="text/javascript" src="~/Scripts/Personalizados/Resultados.js"></script>
+    }
+
+</div>

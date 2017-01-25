@@ -1,0 +1,136 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+#FasesDeClassificacao {
+    margin-top: 150px;
+    font-family: 'Nova Flat';
+}
+
+
+/*----------- Botão ------------*/
+#FasesDeClassificacao .BotaoPadrao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#FasesDeClassificacao .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#FasesDeClassificacao .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+
+#FasesDeClassificacao .celulaTime {
+    border: 1px solid #7cb7e4;
+    color: #2688d2;
+    background-color: #D5E8F7;
+}
+
+#FasesDeClassificacao .celulaUp {
+    border-top: 1px solid #7cb7e4;
+    border-right: 1px solid #7cb7e4;
+    border-bottom: none;
+}
+
+#FasesDeClassificacao .celulaDown {
+    border-bottom: 1px solid #7cb7e4;
+    border-right: 1px solid #7cb7e4;
+    border-top: none;
+}
+
+#FasesDeClassificacao .celulaRight {
+    border-right: 1px solid #7cb7e4;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+#FasesDeClassificacao .ItemFaseDeClassificacao td {
+    width: 150px;
+    height: 25px;
+    text-align: center;
+}
+
+#FasesDeClassificacao .celulaBranca {
+    border: none; !important;
+}
+
+#FasesDeClassificacao .ItemFaseDeClassificacao, .ItemFaseDeClassificacao > tbody,  .ItemFaseDeClassificacao > tbody > tr {
+    border: none; !important;
+}
+
+#FasesDeClassificacao .celulaVencedor {
+    background-color: #D5E8F7;
+    border-color: #1e6ca8;
+}
+
+#FasesDeClassificacao .linhaVencedor {
+    border-color: #1e6ca8;
+}
+
+
+#FasesDeClassificacao .celulaPerdedor {
+    background-color: #D5E8F7;
+    border-style: dotted;
+}
+
+#FasesDeClassificacao .linhaPerdedor {
+    border-color: #D5E8F7;
+}
+
+#FasesDeClassificacao .SelecaoModalidade {
+    text-align: center;
+    width: 75%;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+#FasesDeClassificacao #SelectModalidade {
+    width: 80%;
+    text-align-last: center;
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 2px;
+}
+
+#FasesDeClassificacao #ExibicaoFasesDeClassificacao {
+    text-align: center;
+    border: 1px dotted #2688d2;
+    padding: 10px;
+}
+
+#FasesDeClassificacao .ItemFaseDeClassificacao {
+    margin: 0 auto;
+}
+
+#FasesDeClassificacao .TituloExibicao {
+    text-align: center;
+    font-size: 18px;
+    background-color: #D5E8F7;    
+    color: #2688d2;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: 10px;
+}

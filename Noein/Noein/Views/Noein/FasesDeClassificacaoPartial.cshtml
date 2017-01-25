@@ -1,0 +1,49 @@
+﻿@model List<NoeinModel.Interfaces.ITipoClassificacao>
+
+@if (Model == null)
+{
+    <h2 class="MensagemNull">Não existem Fases de Classificação Geradas!</h2>
+
+    <div class="DivBotaoGeraFaseInicial">
+        <button id="BotaoGeraFaseInicial" class="BotaoPadrao">Gerar Fase de Classificação Inicial</button>
+    </div>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        var Mapa = item.RetornaMapa();
+        if (Mapa != null)
+        {
+            <table class="ItemFaseDeClassificacao" id="@item.GetType()">
+                @for (int i = 1; i <= Mapa.Linhas; i++)
+                {
+                    <tr>
+                        @for (int j = 1; j <= Mapa.Colunas; j++)
+                        {
+                            var Celula = Mapa.RetornaCelula(i, j);
+
+                            if (Celula == null || Celula.Estilo == "")
+                            {
+                                <td class="celulaBranca"></td>
+                            }
+                            else
+                            {
+                                if (Celula.Valor != "0" && Celula.Valor != null)
+                                {
+                                    <td class="@Celula.Estilo" value="@Celula.Valor">
+                                        @Celula.ObjetoInterno
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td class="@Celula.Estilo"></td>
+                                }
+                            }
+                        }
+                    </tr>
+                }
+            </table>
+        }
+    }
+}

@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Fases de Classificação";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<NoeinModel.Modalidade>
+
+@section Styles {
+    <link href="~/Content/FasesDeClassificacao.css" rel="stylesheet" type="text/css" />
+}
+
+<div class="TituloPagina">Fases De Classificação</div>
+
+<div name="Body" id="FasesDeClassificacao">
+@if (Model != null)
+{
+    <div class="SelecaoModalidade">
+        <select id="SelectModalidade">
+            <option value="">Selecione uma modalidade</option>
+            
+            @foreach (var item in Model)
+            {
+                <option value="@item.IdModalidade">@item.DescricaoModalidade</option>
+            }
+        </select>
+        <button id="SelecionaModalidades" class="BotaoPadrao" disabled>Exibir Fases de Classificação</button>
+    </div>
+
+    <div id="ExibicaoFasesDeClassificacao">
+        <div class="TituloExibicao">
+        </div>
+    </div>
+}
+else
+{
+    <h2>Não existem modalidades cadastradas!</h2>
+    <p>Favor cadastrar modalidades antes de gerar fases de classificação</p>
+}
+</div>
+    @section scripts {
+        <script type="text/javascript" src="~/Scripts/Personalizados/FasesDeClassificacao.js"></script>
+    }

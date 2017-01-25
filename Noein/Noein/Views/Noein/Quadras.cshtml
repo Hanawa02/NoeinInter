@@ -11,15 +11,13 @@
 
 <div name="Body" id="Quadras">
     
-    <div class="MenuQuadras">
-        <div class="OpcoesQuadra">
+    <div class="OpcoesQuadra">
             <button class="BotaoPadrao" id="CadastraQuadra">Cadastrar Quadra</button>
-            <button class="BotaoPadrao" id="RemoveQuadra">Remover Quadra</button>
-            <button class="BotaoPadrao" id="FuncaoHorarioQuadra">Horários das Quadras</button>
-            <input type="text" id="InputPesquisaQuadra" name="InputPesquisaQuadra" value="Pesquisar Quadra..." />
-            <span class="glyphicon glyphicon-search" aria-hidden="true" id="PesquisaQuadra"></span>
-            <span class="glyphicon glyphicon-remove" aria-hidden="true" id="LimpaCampoPesquisa"></span>
-        </div>
+            <div class="Pesquisa">
+                <input type="text" id="InputPesquisaQuadra" name="InputPesquisaQuadra" value="Pesquisar Quadra..." />
+                <span class="glyphicon glyphicon-search" aria-hidden="true" id="PesquisaQuadra"></span>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true" id="LimpaCampoPesquisa"></span>
+            </div>
     </div>
     <div class="ListaDeQuadras">
         <div class="CabecalhoListaDeQuadras">
@@ -31,6 +29,8 @@
             </div>
             <div class="CabecalhoLocalizacao">
                 Localização
+            </div>
+            <div class="MenuQuadra">
             </div>
         </div>
         <div class="CorpoDaLista">
@@ -45,14 +45,18 @@
                         <div class="IdQuadra">@quadra.IdQuadra</div>
                         <div class="DescricaoQuadra" value="@quadra.DescricaoQuadra">@quadra.DescricaoQuadra</div>
                         <div class="Localizacao">@quadra.Localizacao</div>
+                        <div class="MenuQuadra">
+                            <span class="glyphicon glyphicon-trash RemoveQuadra" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-time FuncaoHorarioQuadra" aria-hidden="true"></span>
+                        </div>
                     </div>
                     <div class="ModalidadesQuadra">
                         @foreach(var modalidade in quadra.RetornaListaDeModalidade())
                         {
                             <div class="ItemModalidade">@modalidade.Descricao</div>
                         }
-                    </div>
-                </div>
+                    </div>                    
+                </div>                
                 }
             }
         </div>
@@ -79,7 +83,7 @@
                         {
                             var nomeLabel = "Modalidade " + item.Codigo;
                             <div class="CadastraQuadra_ItemModalidade">
-                                <input type="radio" value="@item.Codigo" name="@item.Codigo - @item.Descricao" class="CadastraQuadra_ModalidadeItem"/>
+                                <input type="checkbox" value="@item.Codigo" name="@item.Codigo - @item.Descricao" class="CadastraQuadra_ModalidadeItem"/>
                                 @item.Descricao
                             </div>
                         }
@@ -94,71 +98,35 @@
         </div>
     </div>
 
-    <!-- Modal Remove Quadra -->
-    <div id="ModalRemoveQuadra" class="modal fade" role="dialog" hidden>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header ModalHeaderPadrao">
-                    <button type="button" class="close" data-dissmiss="ModalRemoveQuadra">&times;</button>
-                    <p class="modal-title ModalRemoveQuadraTituloModal">Remover Quadra</p>
-                </div>
-                <div class="modal-body ModalBodyPadrao">
-                    <div class="ListaQuadrasRemover">
-                        <select id="ListaQuadras">
-                            <option value="">Selecione uma quadra</option>
-                            @foreach (var quadra in Model)
-                            {
-                                <option value="@quadra.IdQuadra">@quadra.DescricaoQuadra</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="DivBotaoRemoveQuadra">
-                        <button id="BotaoRemoveQuadra" class="BotaoPadrao">Remover</button>
-                    </div>
-                </div>
-                <div class="ModalFooterPadrao">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Cadastra Horario Quadra -->
     <div id="ModalFuncaoHorarioQuadra" class="modal fade" role="dialog" hidden>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header ModalHeaderPadrao">
                     <button type="button" class="close" data-dissmiss="ModalFuncaoHorarioQuadra">&times;</button>
-                    <p class="modal-title ModalFuncaoHorarioQuadraTituloModal" >Horários das Quadras</p>
+                    <p class="modal-title ModalFuncaoHorarioQuadraTituloModal" ></p>
+                    <input id="FuncaoHorarioQuadra_IdQuadra"type="hidden" value="" />
                 </div>
                 <div class="modal-body ModalBodyPadrao">                                        
-                    <div class="ListaQuadrasFuncaoHorario">
-                        <select id="ListaQuadras">
-                            <option value="">Selecione uma quadra</option>
-                            @foreach (var quadra in Model)
-                            {
-                                <option value="@quadra.IdQuadra">@quadra.DescricaoQuadra</option>
-                            }
-                        </select>
-                    </div>
                     <div class="DivCadastroHorarioQuadra">
                         <div class="Horario_Cadastrar">
                             <div class="LabelCadastraHorario">
                                 Data e Horário de Início
                             </div>
                             <div class="InputCadastraHorario">
-                                <input type="datetime-local" id="CadastraHorario_HorarioInicio" disabled/>
+                                <input type="datetime-local" id="CadastraHorario_HorarioInicio" />
                             </div>
                             <div class="LabelCadastraHorario">
                                 Data e Horário de Término
                             </div>
                             <div class="InputCadastraHorario">
-                                <input type="datetime-local" id="CadastraHorario_HorarioTermino" disabled/>
+                                <input type="datetime-local" id="CadastraHorario_HorarioTermino" />
                             </div>
                             <div class="LabelCadastraHorario">
                                 Intervalo (em minutos)
                             </div>
                             <div class="InputCadastraHorario">                                
-                                <input type="number" min="1" max="300" id="CadastraHorario_Intervalo" disabled/>
+                                <input type="number" min="1" max="300" id="CadastraHorario_Intervalo" />
                             </div>
                         </div>
                         <div class="DivBotaoCadastraHorarioQuadra">
@@ -170,7 +138,7 @@
                             <div class="Titulo">
                                 Lista de Horários
                             </div>
-                            <div class="ListaHorarios">
+                            <div id="ListaHorarios">
                                 <div class="ListaVazia">Não existem horários Cadastrados!</div>
                             </div>
                         </div>

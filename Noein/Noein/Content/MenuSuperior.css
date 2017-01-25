@@ -62,8 +62,10 @@
 }
 
 #MenuSuperior .Imagem_Logo_Menu_Superior{
-     width: 70px;
-    height: 70px;
+     width: 90px;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #MenuSuperior .InformacoesContaUsuario {
@@ -109,19 +111,24 @@
 .NomeCampeonato{
     background-color: #3b93d6;
     height: 25px;
-    margin-top:75px;
+    top:75px;
     color: #fff; 
     text-align: center;
     font-size: 18px;
+    position: fixed;
+    width: 100%;
+    font-family: 'Nova Flat';
 }
 
 
 .UFG {
     color: #3b93d6;
+    font-family: 'Nova Flat';
 }
 
 .UFG:hover {    
     color: #fff;
+    font-family: 'Nova Flat';
 }
 
 #MenuSuperior .Ativo {
@@ -131,16 +138,126 @@
 .TituloPagina {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background-color:#D5E8F7;
+    background-color: #D5E8F7;
     font-size: 20px;
     color: #2688d2;
     text-align: center;
-    width: 75%;
+    width: 76%;
     margin: 0 auto;
     font-weight: bold;
+    position: fixed;
+    top: 100px;
+    left: 12%;
+    font-family: 'Nova Flat';
 }
 
 .Rodape {
     margin-top: 25px;
     color: #2688d2;
 }   
+
+    
+/*----------- Modal Mensagem ------------*/
+#ModalMensagemPrincipal{
+    border: 1px solid #2688d2;
+    border-radius: 3px;
+    z-index: 1280;
+    font-family: 'Nova Flat';
+}
+
+#ModalMensagemPrincipal_Header{
+    border-bottom: 1px solid #D5E8F7;
+    min-height: 16.428571429px;
+    padding:10px;
+    background-color: #D5E8F7;
+    border-top-left-radius:6px;    
+    border-top-right-radius:6px;    
+}
+
+#ModalMensagemTituloModal{
+    font-size: 18px;
+    text-align: center;
+    color: #2688d2;
+    font-weight:bold;
+}
+
+#ModalMensagemPrincipal_Body{
+    color: #2688d2;
+    text-align: center;
+}
+
+#ModalMensagemPrincipal_Footer{
+    text-align:center;
+    margin: 0 auto;
+    border-top: 1px solid #D5E8F7;
+}
+                
+#BotaoFecharModalMensagem{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#BotaoFecharModalMensagem:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#BotaoFecharModalMensagem:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+
+#Resposta_Sim{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+    
+}
+
+#Resposta_Sim:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Resposta_Sim:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+
+#Resposta_Nao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Resposta_Nao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Resposta_Nao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}

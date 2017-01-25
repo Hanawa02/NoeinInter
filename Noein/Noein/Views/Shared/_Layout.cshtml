@@ -17,7 +17,7 @@
     <div id="MenuSuperior" class="navbar">
         <div class="container">
             <div class="Div_Logo_Menu_Superior">
-                <img class="Imagem_Logo_Menu_Superior" alt="LogoNoein" src="~/Images/noein.ico" />
+                <img class="Imagem_Logo_Menu_Superior" alt="LogoNoein" src="~/Images/noein.png" />
             </div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,10 +28,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="ElementoMenuSuperior" id="Menu_Superior_Index">Index</li>
                     <li class="ElementoMenuSuperior" id="Menu_Superior_Times">Times</li>
                     <li class="ElementoMenuSuperior" id="Menu_Superior_Quadras">Quadras</li>
-                    <li class="ElementoMenuSuperior" id="Menu_Superior_Chave_De_Classificacao">Chave De Classificacao</li>
+                    <li class="ElementoMenuSuperior" id="Menu_Superior_Fases_De_Classificacao">Fases De Classificacao</li>
                     <li class="ElementoMenuSuperior" id="Menu_Superior_Horarios">Horarios</li>
                     <li class="ElementoMenuSuperior" id="Menu_Superior_Resultados">Resultados</li>
                 </ul>
@@ -62,6 +61,22 @@
         }
     </div>
     <div class="container body-content">
+        <div id="ModalMensagemPrincipal" class="modal fade" role="dialog" hidden>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header ModalHeaderPadrao" id="ModalMensagemPrincipal_Header">
+                        <p class="modal-title ModalMensagemTituloModal" id="ModalMensagemTituloModal"></p>
+                    </div>
+                    <div class="modal-body ModalBodyPadrao" id="ModalMensagemPrincipal_Body">
+                    </div>
+                    <div class="ModalFooterPadrao" id="ModalMensagemPrincipal_Footer">
+                        <button id="Resposta_Sim" class="BotaoPadrao" hidden>Sim</button>
+                        <button id="Resposta_Nao" class="BotaoPadrao" hidden>Não</button>
+                        <button id="BotaoFecharModalMensagem" class="BotaoPadrao" hidden>Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         @RenderBody()
         
         <footer class="Rodape">

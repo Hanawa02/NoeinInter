@@ -1,0 +1,203 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+#Resultados {
+    margin-top: 150px;
+    font-family: 'Nova Flat';
+    color: #2688d2;
+}
+
+/*----------- Botão ------------*/
+#Resultados .BotaoPadrao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Resultados .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Resultados .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+
+#Resultados #ListaJogos {
+    margin: 0 auto;
+    border: 2px solid #2688d2;
+    min-width: 85%;
+}
+
+#Resultados .CabecalhoListaJogos {
+    background-color: #D5E8F7;
+    font-size: 18px;
+    text-align: center;
+}
+
+#Resultados .IdJogoCabecalho {
+    text-align: center;
+    border-right: 2px solid #2688d2;    
+}
+
+#Resultados .HorarioJogoCabecalho {
+    text-align: center;
+    border-right: 2px solid #2688d2;
+}
+
+#Resultados .ModalidadeJogoCabecalho {
+    text-align: center;    
+    border-right: 2px solid #2688d2;
+}
+
+#Resultados .Time1Cabecalho {
+    text-align: left;
+    padding-left: 15px;
+}
+
+#Resultados .Time2Cabecalho {
+    text-align: right;
+    padding-right: 15px;
+}
+
+#Resultados .ItemListaJogos {
+    font-size: 15px;
+    text-align: center;
+    border: 2px solid #2688d2;
+}
+
+#Resultados .IdJogo {
+    text-align: center;
+    border-right: 2px solid #2688d2;    
+}
+
+#Resultados .HorarioJogo {
+    text-align: center;
+    border-right: 2px solid #2688d2;
+}
+
+#Resultados .ModalidadeJogo {
+    text-align: center;    
+    border-right: 2px solid #2688d2;
+}
+
+#Resultados .Time1 {
+    display: inline-block;
+    width: 33%;
+    text-align: left;
+}
+
+#Resultados .Pontuacoes {
+    display: inline-block;
+}
+
+#Resultados .PontuacaoPrincipal {
+
+}
+
+#Resultados .ResultadoTime1 {
+    display: inline-block;
+    
+}
+
+#Resultados .ResultadoTime2 {
+    display: inline-block;
+}
+
+#Resultados .InputResultadoTime1 {
+    width: 50px;    
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+    border: 1px solid #A8CFED;
+    margin-bottom: 3px;
+}
+
+#Resultados .InputResultadoTime2 {
+    width: 50px;    
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+    border: 1px solid #A8CFED;
+    margin-bottom: 3px;
+}
+
+#Resultados .InputResultadoAdicionalTime1 {
+    width: 50px;    
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+    border: 1px solid #A8CFED;
+}
+
+#Resultados .InputResultadoAdicionalTime2 {
+    width: 50px;    
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+    border: 1px solid #A8CFED;
+}
+
+#Resultados .PontuacaoAdicional {
+
+}
+
+#Resultados .ResultadoTime1 {
+
+}
+
+#Resultados .ResultadoTime2 {
+
+}
+
+#Resultados .Time2 {
+    display: inline-block;
+    text-align: right;
+    width: 33%;    
+}
+
+#Resultados .TableTimesResultados {
+    min-width: 100%;
+    margin: 3px auto;
+}
+
+
+#Resultados .OpcoesResultados {
+    width: 70%;
+    margin: 10px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+#Resultados #FiltraPorData {
+    border: 2px solid #A8CFED;
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+}
+
+#Resultados #FiltrarPorModalidade {
+    border: 2px solid #A8CFED;
+    border-radius: 3px;
+    color: #2688d2;
+    text-align: center;
+}
+
+#Resultados #SalvarResultados {
+    margin-left: 80px;
+}

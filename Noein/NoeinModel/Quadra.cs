@@ -26,6 +26,7 @@ namespace NoeinModel
             this.Localizacao = localizacao;
             this.ListaModalidades = new List<ModalidadesBasicas>();
             this.ListaModalidades.AddRange(modalidades);
+            this.DicionarioHorarioJogo = new Dictionary<Horario, int>();
         }
 
         public Quadra(int idQuadra, string descricaoQuadra, string localizacao, List<ModalidadesBasicas> modalidades, Dictionary<Horario, int> dicionarioHorariosJogos)
@@ -47,5 +48,56 @@ namespace NoeinModel
             return listaRetorno;
         }
 
+        public Dictionary<Horario, int> RetornaDicionarioHorarioJogo()
+        {
+            var DicionarioRetorno = new Dictionary<Horario, int>();
+
+
+            foreach( var item in DicionarioHorarioJogo)
+            {
+                DicionarioRetorno.Add(item.Key, item.Value);
+            }
+
+            return DicionarioRetorno;
+        }
+
+        public bool CadastraHorarioDisponivel(Horario horario)
+        {
+            if (!this.DicionarioHorarioJogo.ContainsKey(horario)) { 
+
+                this.DicionarioHorarioJogo.Add(horario, 0);
+
+                return true;
+            }
+
+            return false;         
+        }
+
+        public bool RemoveHorário(Horario horario)
+        {
+            if (this.DicionarioHorarioJogo.ContainsKey(horario))
+            {
+                if (this.DicionarioHorarioJogo[horario] == 0)
+                {
+                    this.DicionarioHorarioJogo.Remove(horario);
+
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        public bool InsereJogo(Horario horario, int idJogo)
+        {
+            if (this.DicionarioHorarioJogo.ContainsKey(horario))
+            {
+                this.DicionarioHorarioJogo[horario] = idJogo;
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -9,14 +9,14 @@
         window.location.href = UrlParticionada[0] + "/Noein/Quadras";
     });
 
-    $('#Menu_Superior_Chave_De_Classificacao').click(function() {
+    $('#Menu_Superior_Fases_De_Classificacao').click(function () {
         var UrlParticionada = (window.location.href).split("/Noein/");
-        window.location.href = UrlParticionada[0] + "/Noein/ChaveDeClassificacao";
+        window.location.href = UrlParticionada[0] + "/Noein/FasesDeClassificacao";
     });
 
     $('#Menu_Superior_Horarios').click(function() {
         var UrlParticionada = (window.location.href).split("/Noein/");
-        window.location.href = UrlParticionada[0] + "/Noein/Horarios";
+        window.location.href = UrlParticionada[0] + "/Noein/HorarioJogos";
     });
 
     $('#Menu_Superior_Resultados').click(function() {

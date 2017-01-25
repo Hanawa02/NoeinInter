@@ -1,0 +1,391 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+#Times {
+    margin-top: 150px;
+}
+
+/* Menu Times*/
+#Times .OpcoesTime {
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 3px;
+    text-align: right;
+}
+
+/*----------- Botão ------------*/
+#Times .BotaoPadrao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Times .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Times .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+#Times .BotaoPesquisa {
+    cursor:pointer;
+}
+
+/* Pesquisa*/
+
+#Times #InputPesquisaTime {
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 5px; 
+}
+#Times #InputPesquisaTime:disabled {
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Times #PesquisaTime {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Times #PesquisaTime:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+#Times #LimpaCampoPesquisa {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Times #LimpaCampoPesquisa:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+/* Lista de Times */
+
+#Times .ListaDeTimes {
+    width: 70%;
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 3px;
+    border: 2px solid #7cb7e4;
+}
+
+#Times .CabecalhoListaDeTimes {
+    color: #2688d2;
+    background-color: #A8CFED;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#Times .CabecalhoIdTime {
+    display: inline-block;
+    width:5%;
+}
+            
+#Times .CabecalhoNomeTime {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Times .CabecalhoPontuacao {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+
+#Times .ItemListaTime {
+    color: #2688d2;
+}
+
+#Times .InformacoesTime {
+    border-top: 2px solid #7cb7e4;
+    border-bottom: 2px solid #7cb7e4;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    cursor: pointer;
+    background-color: #e9f3fa; 
+}
+
+#Times .InformacoesTime:hover {
+    border-top: 2px solid #7cb7e4;
+    border-bottom: 2px solid #7cb7e4;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    cursor: pointer;
+    background-color: #e9f3fa; 
+    font-weight: 600;
+    }
+       
+#Times .IdTime {
+    display: inline-block;
+    width:5%;
+}
+            
+#Times .NomeTime {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Times .Pontuacao {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}        
+
+#Times .ModalidadesTime{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+}
+
+#Times .ItemModalidade {
+    display: inline-block;
+    width: 18.4%;
+    text-align: left;
+    padding: 5px;
+}
+
+#Times .ItemModalidade:hover {
+    display: inline-block;
+    width: 18.4%;
+    text-align: left;
+    padding: 5px;
+    font-weight: 600;
+}
+
+#Times .ListaVazia {
+    color: #2688d2;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    text-align: center;
+}
+
+/* Modal Cadastra Time*/
+#Times #ModalCadastraTime{
+    
+}
+
+#Times #ModalCadastraTime .modal-dialog {
+    width: 75%;    
+}
+
+#Times .modal-content {
+    border-radius: 20px;
+}
+
+#Times .ModalHeaderPadrao {
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    background-color: #2688d2;
+    color: #D5E8F7;
+    height: 30px;
+    padding: 5px;
+    text-shadow: 0 1px 0 #000;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+ 
+#Times .ModalCadastraTimeTituloModal { 
+}
+
+#Times .ModalBodyPadrao {
+    color: #2688d2;
+}
+
+#Times .CadastraTime_InformacoesTime{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#Times #CadastraTime_Nome{
+    width: 60%;
+    text-align:center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 3px;
+    margin-right: 15px;
+}
+
+#Times #CadastraTime_Pontuacao{
+    width: 33%;
+    text-align:center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 3px;
+}
+
+#Times .CadastraTime_Modalidades{
+    padding: 10px;
+}
+
+#Times .CadastraTime_ItemModalidade{
+    display: inline-block;
+    width: 32%;
+    padding:3px;
+}
+
+#Times .DivBotaoCadastraTime{
+    text-align: center;
+}
+
+#Times #BotaoCadastraTime{
+
+}
+
+#Times .close{
+    margin-top: 3px;
+    margin-right: 7px;
+    color: #A8CFED;
+    opacity: 1;
+    text-shadow: 0 1px 0 #fff;
+}
+
+#Times .ModalRemoveTimeTituloModal {
+    
+}
+
+#Times .DivBotaoRemoveTime{
+    text-align:center;
+}
+
+#Times .ListaHorarioTimes{
+    margin-top: -10px;
+    margin-bottom:15px; 
+}
+
+#Times #ModalFuncaoHorarioTime{
+
+}
+
+#Times .ModalFuncaoHorarioTimeTituloModal{
+
+}
+
+#Times .Time_Horario{
+
+}
+
+#Times #ListaHorarios{
+    text-align: center;
+    
+}
+
+#Times #ModalFuncaoHorarioTime .modal-dialog {
+    width: 60%;    
+}
+
+
+.ListaHorario_InicioTitulo {
+    border-bottom: 1px solid #2688d2;
+    width: 30%;
+    display: inline-block;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    background-color: #A8CFED;
+}
+
+#Times .ListaHorario_TerminoTitulo{
+    border-bottom: 1px solid #2688d2;
+    width: 30%;
+    display: inline-block;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    background-color: #A8CFED;
+}
+
+#Times .ListaHorario_StatusTitulo{
+    border-bottom: 1px solid #2688d2;
+    width: 30%;
+    display: inline-block;
+    border-collapse: collapse;
+    text-align: center;
+    font-weight: bold;
+    background-color: #A8CFED;
+}
+
+#Times .ListaHorario_Inicio {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 1px solid #2688d2;
+}
+
+#Times .ListaHorario_Termino{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 1px solid #2688d2;
+}
+
+#Times .ListaHorario_Status{
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 1px solid #2688d2;
+}
+
+#Times .RemoveTime {
+    margin-top: 1px;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+#Times .FuncaoHorarioTime {
+    margin-top: 1px;
+    cursor: pointer;
+}
+
+#Times .MenuTime {
+    width: 5%;
+    display: inline-block;
+}
+
+#Times .Pesquisa {
+    display: inline-block;
+    float: right;
+    margin: 5px;
+}
+
+#Times .NumeroParaCriterioDeChaveDeClassificacao {
+    width: 40px;
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 3px; 
+    margin-left: auto;
+    margin-left: 5px;
+}

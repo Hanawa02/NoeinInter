@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Horário Jogos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model NoeinModel.MapaDeCelulas
+
+@section Styles {
+    <link href="~/Content/HorarioJogos.css" rel="stylesheet" type="text/css" />
+}
+<div class="TituloPagina">Horários</div>
+
+<div name="Body" id="HorarioJogos">
+
+    <div id="HorariosJogos">
+        @if (Model != null)
+        {
+        <table class="TabelaDeHorarios">
+            @for (int l = 1; l <= Model.Linhas; l++)
+            {
+                <tr>
+                    @for (int c = 1; c <= Model.Colunas; c++)
+                    {
+                        var Celula = Model.RetornaCelula(l, c);
+                        if (Celula != null)
+                        {
+                            <td class="@Celula.Estilo" value="@Celula.Valor" colspan="@Celula.ColSpan" rowspan="@Celula.RowSpan">
+                                @Celula.ObjetoInterno
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        </table>
+        }
+    </div>
+    
+    @section scripts {
+        <script type="text/javascript" src="~/Scripts/Personalizados/HorarioJogos.js"></script>
+    }
+
+</div>

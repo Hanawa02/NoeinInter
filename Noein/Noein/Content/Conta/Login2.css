@@ -59,16 +59,17 @@
     width: 80%;
     text-align-last: center;
     text-align: center;
-    border: 2px solid rgb(168,207,237);
+    border: 2px solid #A8CFED;
     color: #2688d2;
     border-radius: 3px;
+    padding: 2px;
 }
 
 /*----------- Botão ------------*/
 #Login2 .BotaoPadrao{
     margin: 5px;
-    background-color: rgb(213,232,247);
-    border: 2px solid rgb(213,232,247);
+    background-color: #D5E8F7;
+    border: 2px solid #D5E8F7;
     color: #2688d2;
     border-radius: 5px;
 }
@@ -76,14 +77,14 @@
 #Login2 .BotaoPadrao:disabled{
     margin: 5px;
     background-color: #e5e5e5;
-    border: 2px solid rgb(168,207,237);
+    border: 2px solid #A8CFED;
     color: #ccc;
     border-radius: 5px;
 }
 
 #Login2 .BotaoPadrao:enabled:hover {
     cursor: pointer;
-    background-color: rgb(168,207,237);
+    background-color: #A8CFED;
     border: 2px solid #2688d2;    
     border-radius: 5px;
 }
@@ -95,10 +96,10 @@
 }
 
 #Login2 .ModalHeaderPadrao{
-    border-bottom: 1px solid rgb(213,232,247);
+    border-bottom: 1px solid #D5E8F7;
     min-height: 16.428571429px;
     padding:10px;
-    background-color: rgb(213,232,247);
+    background-color: #D5E8F7;
     border-top-left-radius:6px;    
     border-top-right-radius:6px;    
 }
@@ -118,7 +119,7 @@
 #Login2 .ModalFooterPadrao {
     text-align:center;
     margin: 0 auto;
-    border-top: 1px solid rgb(213,232,247);
+    border-top: 1px solid #D5E8F7;
 }
 
 #Login2 #BotaoFecharModalMensagem {
