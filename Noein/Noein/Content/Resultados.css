@@ -41,7 +41,7 @@
 #Resultados #ListaJogos {
     margin: 0 auto;
     border: 2px solid #2688d2;
-    min-width: 85%;
+    min-width: 95%;
 }
 
 #Resultados .CabecalhoListaJogos {
@@ -98,7 +98,7 @@
 
 #Resultados .Time1 {
     display: inline-block;
-    width: 33%;
+    width: 30%;
     text-align: left;
 }
 
@@ -168,7 +168,7 @@
 #Resultados .Time2 {
     display: inline-block;
     text-align: right;
-    width: 33%;    
+    width: 30%;    
 }
 
 #Resultados .TableTimesResultados {
@@ -200,4 +200,20 @@
 
 #Resultados #SalvarResultados {
     margin-left: 80px;
+}
+
+#Resultados .W_Time1 {
+    display: inline-block;
+}
+
+#Resultados .W_Time2 {
+    display: inline-block;
+}
+
+#Resultados .O_Time1 {
+    display: inline-block;
+}
+
+#Resultados .O_Time2 {
+    display: inline-block;
 }

@@ -1,0 +1,36 @@
+﻿@model Dictionary<NoeinModel.Horario, int>
+<div class="VoltarParaPaginaTimes"><span class="glyphicon glyphicon-arrow-left IconeVoltarPaginaTimes" aria-hidden="true"></span> Voltar</div>
+<div class="Times_Cadastro">
+    <div class="Titulo_Operacao">Horários - @ViewBag.NomeTime</div>
+    <div class="ListaHorarioTimes">
+        <input type="hidden" value="" id="FuncaoHorarioTime_IdTime" />
+        <div class="Time_Horario">
+            <div id="ListaHorarios">
+                <div id="ListaHorarios">
+                    @if (Model == null || Model.Count == 0)
+                    {
+                        <div class="ListaVazia">Não existem horários Cadastrados!</div>
+                    }
+                    else
+                    {
+                        <div class="ListaHorario_Titulo">
+                            <div class="ListaHorario_InicioTitulo">Ínicio</div>
+                            <div class="ListaHorario_TerminoTitulo">Término</div>
+                            <div class="ListaHorario_StatusTitulo">Jogo</div>
+                        </div>
+                        foreach (var item in Model)
+                        {
+                            <div class="ListaHorarioItem">
+                                <div class="ListaHorario_Inicio">@item.Key.Inicio.ToString("dd/MM/yyyy HH:mm")</div>
+                                <div class="ListaHorario_Termino">@item.Key.Fim.ToString("dd/MM/yyyy HH:mm")</div>
+                                <div class="ListaHorario_Status">Jogo: @item.Value</div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        

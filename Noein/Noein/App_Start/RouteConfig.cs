@@ -16,7 +16,7 @@ namespace Noein
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Conta", action = "RedirecionarParaLogin1", id = UrlParameter.Optional }
+                defaults: new { controller = "Noein", action = "Modalidades", id = UrlParameter.Optional }
             );
         }
     }

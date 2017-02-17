@@ -1,0 +1,25 @@
+﻿@model List<NoeinModel.Modalidade>
+
+<div class="VoltarParaPaginaQuadras"><span class="glyphicon glyphicon-arrow-left IconeVoltarPaginaQuadras" aria-hidden="true"></span> Voltar</div>
+<div class="Quadras_Cadastro">
+    <div class="Titulo_Operacao">Cadastrar Quadra</div>
+    <div class="CadastraQuadra_InformacoesQuadra">
+        Descrição:
+        <input type="text" id="CadastraQuadra_Descricao" value="" />
+        Localização:
+        <input type="text" id="CadastraQuadra_Localizacao" value="" />
+    </div>
+    <div class="CadastraQuadra_Modalidades">
+        @foreach (var item in Model)
+        {
+            var nomeLabel = "Modalidade " + item.IdModalidade;
+            <div class="CadastraQuadra_ItemModalidade">
+                <input type="checkbox" value="@item.IdModalidade" name="@item.IdModalidade - @item.DescricaoModalidade" class="CadastraQuadra_ModalidadeItem" />
+                @item.DescricaoModalidade
+            </div>
+        }
+    </div>
+    <div class="DivBotaoCadastraQuadra">
+        <button id="BotaoCadastraQuadra" class="BotaoPadrao">Cadastrar</button>
+    </div>
+</div>

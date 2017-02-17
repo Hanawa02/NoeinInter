@@ -47,5 +47,21 @@ namespace NoeinModel.Geral
 
             return listaDatas;
         }
+     
+
+        public static string RetornaTipoClassificacao(TiposClassificacao tipo)
+        {
+            switch (tipo)
+            {
+                case TiposClassificacao.FaseDeGrupo:
+                    return "Fase de Grupo";
+                case TiposClassificacao.Chave:
+                    return "Chave";
+                case TiposClassificacao.DisputaPorTempo:
+                    return "Diputa por Tempo";
+                default:
+                    return "";
+            }
+        }
     }
 }

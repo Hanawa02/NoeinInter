@@ -1,0 +1,34 @@
+﻿@model string
+<div class="VoltarParaPaginaQuadras"><span class="glyphicon glyphicon-arrow-left IconeVoltarPaginaQuadras" aria-hidden="true"></span> Voltar</div>
+<div class="Quadras_Cadastro">
+    <div class="Titulo_Operacao">Horários Quadra</div>
+    <input id="FuncaoHorarioQuadra_IdQuadra" type="hidden" value="@Model" />
+    <div class="DivCadastroHorarioQuadra">
+        <div class="Horario_Cadastrar">
+            <div class="LabelCadastraHorario">
+                Data e Horário de Início
+            </div>
+            <div class="InputCadastraHorario">
+                <input type="datetime-local" id="CadastraHorario_HorarioInicio" />
+            </div>
+            <div class="LabelCadastraHorario">
+                Data e Horário de Término
+            </div>
+            <div class="InputCadastraHorario">
+                <input type="datetime-local" id="CadastraHorario_HorarioTermino" />
+            </div>
+            <div class="LabelCadastraHorario">
+                Intervalo (em minutos)
+            </div>
+            <div class="InputCadastraHorario">
+                <input type="number" min="1" max="300" id="CadastraHorario_Intervalo" />
+            </div>
+        </div>
+        <div class="DivBotaoCadastraHorarioQuadra">
+            <button id="BotaoCadastraHorarioQuadra" class="BotaoPadrao" disabled>Cadastrar Horario</button>
+        </div>
+    </div>
+    <div class="ListaHorarioQuadras">
+        @Html.Action("Quadras_Listagem_Horario", @Model)
+    </div>
+</div>

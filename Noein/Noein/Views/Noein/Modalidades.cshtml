@@ -1,0 +1,64 @@
+﻿@using NoeinModel.Geral;
+@{
+    ViewBag.Title = "Modalidades";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<NoeinModel.Modalidade>
+
+@section Styles {
+    <link href="~/Content/Modalidades.css" rel="stylesheet" type="text/css" />
+}
+<div class="TituloPagina">Modalidades</div>
+
+<div name="Body" id="Modalidades">
+    <div class="PesquisaModalidade">
+        <input type="text" id="InputPesquisaModalidade" name="InputPesquisaModalidade" value="Pesquisar Modalidade..." />
+        <span class="glyphicon glyphicon-search" aria-hidden="true" id="PesquisaModalidade"></span>
+        <span class="glyphicon glyphicon-remove" aria-hidden="true" id="LimpaCampoPesquisaModalidade"></span>
+    </div>
+    
+    <div class="ListaDeModalidades">
+        <div class="CabecalhoListaDeModalidades">
+            <div class="CabecalhoDescricaoModalidade">
+                Modalidade
+            </div>
+            <div class="CabecalhoTipoModalidade">
+                Tipo
+            </div>
+            <div class="CabecalhoLimiteDeTimes">
+                Limite de Times
+            </div>
+            <div class="CabecalhoTimesInscritos">
+                Times Inscritos
+            </div>
+            <div class="MenuModalidade">
+            </div>
+        </div>
+        <div class="CorpoDaLista">
+            @if (Model == null || Model.Count == 0)
+            {
+                <div class="ListaVazia">Não existem Modalidades cadastradas.</div>
+            }
+            else
+            {
+                foreach (var Modalidade in Model)
+                {
+                    <div class="ItemListaModalidade" value="@Modalidade.IdModalidade">
+                        <div class="DescricaoModalidade" value="@Modalidade.DescricaoModalidade">@Modalidade.DescricaoModalidade</div>
+                        <div class="TipoModalidade">@TipoDeModalidade.RetornaDescricao(Modalidade.TipoModalidade)</div>
+                        <div class="LimiteDeTimes">@Modalidade.MaximoDeTimes</div>
+                        <div class="TimesInscritos">@Modalidade.QuantidadeDeTimesInscritos</div>
+                        <div class="MenuModalidade">
+                            <span class="glyphicon glyphicon-search DetalhesModalidade" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-trash RemoveModalidade" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    @section scripts {
+        <script type="text/javascript" src="~/Scripts/Personalizados/Modalidades.js"></script>
+    }
+
+</div>

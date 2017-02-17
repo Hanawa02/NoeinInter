@@ -17,31 +17,31 @@ namespace NoeinModel
 
         private Dictionary<Horario, int> DicionarioHorarioJogo { get; set; }
 
-        private List<ModalidadesBasicas> ListaModalidades { get; set; }
+        private List<Modalidade> ListaModalidades { get; set; }
         
-        public Quadra(int idQuadra, string descricaoQuadra, string localizacao, List<ModalidadesBasicas> modalidades)
+        public Quadra(int idQuadra, string descricaoQuadra, string localizacao, List<Modalidade> modalidades)
         {
             this.IdQuadra = idQuadra;
             this.DescricaoQuadra = descricaoQuadra;
             this.Localizacao = localizacao;
-            this.ListaModalidades = new List<ModalidadesBasicas>();
+            this.ListaModalidades = new List<Modalidade>();
             this.ListaModalidades.AddRange(modalidades);
             this.DicionarioHorarioJogo = new Dictionary<Horario, int>();
         }
 
-        public Quadra(int idQuadra, string descricaoQuadra, string localizacao, List<ModalidadesBasicas> modalidades, Dictionary<Horario, int> dicionarioHorariosJogos)
+        public Quadra(int idQuadra, string descricaoQuadra, string localizacao, List<Modalidade> modalidades, Dictionary<Horario, int> dicionarioHorariosJogos)
         {
             this.IdQuadra = idQuadra;
             this.DescricaoQuadra = descricaoQuadra;
             this.Localizacao = localizacao;
-            this.ListaModalidades = new List<ModalidadesBasicas>();
+            this.ListaModalidades = new List<Modalidade>();
             this.ListaModalidades.AddRange(modalidades);
             this.DicionarioHorarioJogo = new Dictionary<Horario, int>(dicionarioHorariosJogos);
         }
 
-        public List<ModalidadesBasicas> RetornaListaDeModalidade()
+        public List<Modalidade> RetornaListaDeModalidade()
         {
-            var listaRetorno = new List<ModalidadesBasicas>();
+            var listaRetorno = new List<Modalidade>();
 
             listaRetorno.AddRange(this.ListaModalidades);
 

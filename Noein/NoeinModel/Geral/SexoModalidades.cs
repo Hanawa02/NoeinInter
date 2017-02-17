@@ -8,26 +8,28 @@ namespace NoeinModel.Geral
 {
     public class SexoModalidades
     {
-        public int Codigo { get; private set; }
-        public string Descricao { get; private set; }
+        private int Codigo {get;set;}
+        private string Descricao { get; set; }
 
-        public SexoModalidades(int codigo, string descricao)
+        public static SexoModalidades Masculino = new SexoModalidades(1, "Masculino");
+        public static SexoModalidades Feminino = new SexoModalidades(2, "Feminino");
+        public static SexoModalidades Misto = new SexoModalidades(3, "Misto");
+
+        private SexoModalidades(int codigo, string descricao)
         {
             this.Codigo = codigo;
 
             this.Descricao = descricao;
+        }   
+
+        public static string RetornaDescricao(SexoModalidades sexo)
+        {
+            return sexo.Descricao;
         }
 
-        public override bool Equals(object obj)
+        public static int RetornaCodigo(SexoModalidades sexo)
         {
-            var objetoConvertido = (SexoModalidades)obj;
-
-            return this.Codigo == objetoConvertido.Codigo ;
-        }
-
-        public override int GetHashCode()
-        {
-            return this.Codigo;
+            return sexo.Codigo;
         }
     }
 }

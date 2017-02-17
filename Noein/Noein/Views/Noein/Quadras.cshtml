@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Quadra";
+    ViewBag.Title = "Quadras";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<NoeinModel.Quadra>
@@ -9,8 +9,7 @@
 }
 <div class="TituloPagina">Quadras</div>
 
-<div name="Body" id="Quadras">
-    
+<div name="Body" id="Quadras">    
     <div class="OpcoesQuadra">
             <button class="BotaoPadrao" id="CadastraQuadra">Cadastrar Quadra</button>
             <div class="Pesquisa">
@@ -53,7 +52,7 @@
                     <div class="ModalidadesQuadra">
                         @foreach(var modalidade in quadra.RetornaListaDeModalidade())
                         {
-                            <div class="ItemModalidade">@modalidade.Descricao</div>
+                            <div class="ItemModalidade">@modalidade.DescricaoModalidade</div>
                         }
                     </div>                    
                 </div>                
@@ -62,93 +61,7 @@
         </div>
     </div>
     <!-- Fim Lista de Quadras -->
-
-    <!-- Modal Cadastra Quadra -->
-    <div id="ModalCadastraQuadra" class="modal fade" role="dialog" hidden>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header ModalHeaderPadrao">
-                    <button type="button" class="close" data-dissmiss="ModalCadastraQuadra">&times;</button>
-                    <p class="modal-title ModalCadastraQuadraTituloModal">Cadastrar Quadra</p>
-                </div>
-                <div class="modal-body ModalBodyPadrao">
-                    <div class="CadastraQuadra_InformacoesQuadra">
-                        Descrição:
-                        <input type="text" id="CadastraQuadra_Descricao" value="" />
-                        Localização:
-                        <input type="text" id="CadastraQuadra_Localizacao" value="" />
-                    </div>
-                    <div class="CadastraQuadra_Modalidades">
-                        @foreach (var item in ViewBag.ModalidadesVisiveis)
-                        {
-                            var nomeLabel = "Modalidade " + item.Codigo;
-                            <div class="CadastraQuadra_ItemModalidade">
-                                <input type="checkbox" value="@item.Codigo" name="@item.Codigo - @item.Descricao" class="CadastraQuadra_ModalidadeItem"/>
-                                @item.Descricao
-                            </div>
-                        }
-                    </div>
-                    <div class="DivBotaoCadastraQuadra">
-                        <button id="BotaoCadastraQuadra" class="BotaoPadrao">Cadastrar</button>
-                    </div>
-                </div>
-                <div class="ModalFooterPadrao">                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Cadastra Horario Quadra -->
-    <div id="ModalFuncaoHorarioQuadra" class="modal fade" role="dialog" hidden>
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header ModalHeaderPadrao">
-                    <button type="button" class="close" data-dissmiss="ModalFuncaoHorarioQuadra">&times;</button>
-                    <p class="modal-title ModalFuncaoHorarioQuadraTituloModal" ></p>
-                    <input id="FuncaoHorarioQuadra_IdQuadra"type="hidden" value="" />
-                </div>
-                <div class="modal-body ModalBodyPadrao">                                        
-                    <div class="DivCadastroHorarioQuadra">
-                        <div class="Horario_Cadastrar">
-                            <div class="LabelCadastraHorario">
-                                Data e Horário de Início
-                            </div>
-                            <div class="InputCadastraHorario">
-                                <input type="datetime-local" id="CadastraHorario_HorarioInicio" />
-                            </div>
-                            <div class="LabelCadastraHorario">
-                                Data e Horário de Término
-                            </div>
-                            <div class="InputCadastraHorario">
-                                <input type="datetime-local" id="CadastraHorario_HorarioTermino" />
-                            </div>
-                            <div class="LabelCadastraHorario">
-                                Intervalo (em minutos)
-                            </div>
-                            <div class="InputCadastraHorario">                                
-                                <input type="number" min="1" max="300" id="CadastraHorario_Intervalo" />
-                            </div>
-                        </div>
-                        <div class="DivBotaoCadastraHorarioQuadra">
-                            <button id="BotaoCadastraHorarioQuadra" class="BotaoPadrao" disabled>Cadastrar Horario</button>
-                        </div>
-                    </div>
-                    <div class="ListaHorarioQuadras">
-                        <div class="Quadra_Horario">
-                            <div class="Titulo">
-                                Lista de Horários
-                            </div>
-                            <div id="ListaHorarios">
-                                <div class="ListaVazia">Não existem horários Cadastrados!</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ModalFooterPadrao">
-                </div>
-            </div>
-        </div>
-    </div>
+    
     @section scripts {
         <script type="text/javascript" src="~/Scripts/Personalizados/Quadras.js"></script>
     }

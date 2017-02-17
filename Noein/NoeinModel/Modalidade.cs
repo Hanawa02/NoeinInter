@@ -18,18 +18,35 @@ namespace NoeinModel
 
         public SexoModalidades SexoModalidade { get; private set; }
 
-        public bool PossuiCriterioProprioDeGeracaoDeClassificacaoInicial { get; private set; }
+        public TipoDeModalidade TipoModalidade { get; private set; }
 
-        public Dictionary<ITipoClassificacao, ICriterioGeracaoDeChaveDeClassificacao> Fases { get; set; }
+        public int MaximoDeTimes { get; private set; }
+
+        public int IdCampeonato { get; private set; }
+
+        public int QuantidadeDeTimesInscritos { get; private set; }
+
+        public string Divisao { get; private set; }
+
+        public int PontuacaoPadraoW { get; private set; }
+
+        public int PontuacaoPadraoO { get; private set; }
+
+        public Dictionary<ITipoClassificacao, bool> Fases { get; set; }
 
 
-        public Modalidade(int idModalidade, ModalidadesBasicas modalidadeBase, SexoModalidades sexoModalidade, bool possuiCriterioProprioDeGeracaoDeClassificacaoInicial)
+        public Modalidade(int idModalidade, ModalidadesBasicas modalidadeBase, SexoModalidades sexoModalidade, TipoDeModalidade tipoModalidade, int maximoDeTimes, int pontuacaoPadraoW, int pontuacaoPadraoO, string divisao)
         {
             this.IdModalidade = idModalidade;
             this.ModalidadeBase = modalidadeBase;
             this.SexoModalidade = sexoModalidade;
-            this.DescricaoModalidade = ModalidadeBase.Descricao + " " + SexoModalidade.Descricao;
-            this.PossuiCriterioProprioDeGeracaoDeClassificacaoInicial = possuiCriterioProprioDeGeracaoDeClassificacaoInicial;
+            this.TipoModalidade = tipoModalidade;
+            this.MaximoDeTimes = maximoDeTimes;
+            this.PontuacaoPadraoW = pontuacaoPadraoW;
+            this.PontuacaoPadraoO = pontuacaoPadraoO;
+            this.Divisao = divisao;
+            this.DescricaoModalidade = ModalidadeBase.Descricao + " " + SexoModalidades.RetornaDescricao(SexoModalidade);
+            this.Fases = new Dictionary<ITipoClassificacao, bool>();
         }
         
     }

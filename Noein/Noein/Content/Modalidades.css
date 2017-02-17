@@ -1,0 +1,171 @@
+﻿/*  
+    Cores do Sistema
+    Azul padrão: #2688d2;
+    Borda contrastante com o azul padrão: #1f6ca8;
+    Cor da fonte no azul padrão: #e5e5e5;
+    Cor da borda escura: #a8cfed;
+    Cor da borda clara: #D5E8F7;
+    Background Botao: #D5E8F7;
+    Fonte Padrão: Nova Flat
+*/
+
+#Modalidades {
+    margin-top: 150px;
+}
+
+/*----------- Botão ------------*/
+#Modalidades .BotaoPadrao{
+    margin: 5px;
+    background-color: #D5E8F7;
+    border: 2px solid #92c3e8;
+    color: #2688d2;
+    border-radius: 5px;
+}
+
+#Modalidades .BotaoPadrao:disabled{
+    margin: 5px;
+    background-color: #e5e5e5;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px;
+}
+
+#Modalidades .BotaoPadrao:enabled:hover {
+    cursor: pointer;
+    background-color: #A8CFED;
+    border: 2px solid #2688d2;    
+    border-radius: 5px;
+}
+#Modalidades .BotaoPesquisa {
+    cursor:pointer;
+}
+
+/* Pesquisa*/
+#Modalidades .PesquisaModalidade {
+    text-align: right;
+    width: 85%;
+    margin: 0 auto;
+}
+
+#Modalidades #InputPesquisaModalidade {
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #2688d2;
+    border-radius: 5px; 
+}
+
+#Modalidades #InputPesquisaModalidade:disabled {
+    text-align: center;
+    border: 2px solid #A8CFED;
+    color: #ccc;
+    border-radius: 5px; 
+    background-color: #e5e5e5;
+}
+
+#Modalidades #PesquisaModalidade {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Modalidades #PesquisaModalidade:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+#Modalidades #LimpaCampoPesquisaModalidade {    
+    display: inline-block;
+    color: #2688d2;
+    cursor: pointer;
+}
+
+#Modalidades #LimpaCampoPesquisaModalidade:disabled {    
+    display: inline-block;
+    color: #e5e5e5;
+    cursor: default;
+}
+
+
+#Modalidades .ListaDeModalidades {
+    width: 70%;
+    margin: 25px auto;
+    text-align: center;
+    border-radius: 3px;
+    border: 2px solid #7cb7e4;
+}
+
+#Modalidades .CabecalhoListaDeModalidades {
+    color: #2688d2;
+    background-color: #A8CFED;
+    font-size: 15px;
+    font-weight: bold;
+}
+    
+#Modalidades .CabecalhoDescricaoModalidade {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Modalidades .CabecalhoTipoModalidade {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+#Modalidades .CabecalhoLimiteDeTimes {
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+}
+
+#Modalidades .CabecalhoTimesInscritos {
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+}
+
+#Modalidades .ItemListaModalidade {
+    color: #2688d2;
+}
+
+#Modalidades .DescricaoModalidade {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+    padding-left: 10px;
+}
+            
+#Modalidades .TipoModalidade {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+#Modalidades .LimiteDeTimes {
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+}
+
+#Modalidades .TimesInscritos {
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+}
+
+#Modalidades .MenuModalidade {
+    display: inline-block;
+    text-align: right;
+    width: 5%;
+}
+
+
+#Modalidades .ListaVazia {
+    color: #2688d2;
+    padding-bottom: 3px;
+    padding-top: 3px;  
+    text-align: center;
+}

@@ -39,13 +39,11 @@
     });
 
     /* -------- Pesquisar -------- */
-    $("#InputPesquisaTime").click(function () {
-        if (this.value == "Pesquisar Time...") {
-            this.value = "";
-        }
+    $('#Times').on('click', "#InputPesquisaTime", function () {
+        this.value = "";
     });
 
-    $("#InputPesquisaTime").focusout(function () {
+    $('#Times').on('focusout', "#InputPesquisaTime", function () {
         if (this.value == "") {
             this.value = "Pesquisar Time...";
             $('.ItemListaTime').show();
@@ -54,11 +52,11 @@
         }
     });
 
-    $('#PesquisaTime').click(function () {
+    $('#Times').on('click', '#PesquisaTime', function () {
         Pesquisa();
     });
 
-    $('#InputPesquisaTime').keyup(function (evento) {
+    $('#Times').on('keyup', '#InputPesquisaTime', function (evento) {
         Pesquisa();
     });
 
@@ -76,19 +74,24 @@
 
     };
 
-    $('#LimpaCampoPesquisa').click(function () {
+    $('#Times').on('click', '#LimpaCampoPesquisa', function () {
         $('#InputPesquisaTime').get(0).value = "Pesquisar Time...";
         $('.ItemListaTime').show();
     });
 
     /* Botões de CRUD */
-    $('#CadastraTime').click(function () {
-        LimpaCamposCadastraTime();
-        ValidaCadastroTime();
-        $('#ModalCadastraTime').modal('show');
+    $('#Times').on('click', '#CadastraTime', function () {
+        $.ajax({
+            url: "/Noein/Times_Cadastro",
+            success: function (retorno) {
+                $('#Times').get(0).innerHTML = retorno;
+                LimpaCamposCadastraTime();
+                ValidaCadastroTime();
+            }
+        });        
     });
 
-    $('.CorpoDaLista').on('click', '.RemoveTime', function () {
+    $('#Times').on('click', '.RemoveTime', function () {
         var nomeTime = $($(this).parent()).parent().find('.NomeTime').get(0).textContent;
         var idTime = $($(this).parent()).parent().find('.IdTime').get(0).textContent;
 
@@ -105,23 +108,20 @@
         });
     });
 
-    $('.CorpoDaLista').on('click', '.FuncaoHorarioTime', function () {
-        LimpaCamposFuncaoHorario();
-        var nomeTime = $($(this).parent()).parent().find('.NomeTime').get(0).textContent;
+    $('#Times').on('click', '.FuncaoHorarioTime', function () {
         var idTime = $($(this).parent()).parent().find('.IdTime').get(0).textContent;
 
-        $('#FuncaoHorarioTime_IdTime').val(idTime);
-        $('.ModalFuncaoHorarioTimeTituloModal').text('Jogos - ' + nomeTime);
-
-        $.getJSON('RetornaListaJogosTime', { IdTime: idTime }, function (retorno) {
-            PreencheListaHorarios(retorno.ObjetoRetorno);
-        });
-
-        $('#ModalFuncaoHorarioTime').modal('show');
+        $.ajax({
+            url: "/Noein/Times_Funcoes_Horario",
+            data: { IdTime: idTime },
+            success: function (retorno) {
+                $('#Times').get(0).innerHTML = retorno;
+            }
+        });        
     });
 
     /* Fecha Modais */
-    $('.close').click(function () {
+    $('#Times').on('click', '.close', function () {
         $('#ModalCadastraTime').modal('hide');
         $('#ModalFuncaoHorarioTime').modal('hide');
         MostrarBotaoFecharModalMensagem(false);
@@ -129,7 +129,7 @@
     });
 
     /* Modal Cadastra Time */
-    $('#BotaoCadastraTime').click(function () {
+    $('#Times').on('click', '#BotaoCadastraTime', function () {
         var nome = $.trim($('#CadastraTime_Nome').val());
         var Modalidades = $('.CadastraTime_Modalidades').find('.CadastraTime_ItemModalidade');
         var DicionarioDeModalidadesCriterio = new Array();
@@ -143,58 +143,17 @@
         });
         
         $.getJSON('CadastraTime', $.param({ Nome: nome, ListaModalidades: DicionarioDeModalidadesCriterio }, true), function (retorno) {
-            if (retorno.MensagemRetorno.TituloMensagem == "Sucesso") {
-                var idTime = retorno.ObjetoRetorno;
-
-                /* Adiciona Time na Listagem da Página */
-                var NovaTime = '<div class="ItemListaTime" value="' + idTime + '">';
-                NovaTime += '<div class="InformacoesTime"  value="' + idTime + '">';
-                NovaTime += '<div class="IdTime">' + idTime + '</div>';
-                NovaTime += '<div class="NomeTime" value="' + nome + '">' + nome + '</div>';
-                NovaTime += '<div class="Pontuacao">' + 0 + '</div>';
-                NovaTime += '<div class="MenuTime">';
-                NovaTime += '<span class="glyphicon glyphicon-trash RemoveTime" aria-hidden="true"></span>';
-                NovaTime += '<span class="glyphicon glyphicon-time FuncaoHorarioTime" aria-hidden="true"></span>';
-                NovaTime += '</div>';
-                NovaTime += '</div>';
-                NovaTime += '<div class="ModalidadesTime">';
-                
-                Modalidades.each(function () {
-                    var ModalidadeCheck = $(this).find('.CadastraTime_ModalidadeItem');
-                    var NumeroCriterio = $(this).find('.NumeroParaCriterioDeChaveDeClassificacao').val();
-                    if (ModalidadeCheck.get(0).checked && ((NumeroCriterio != "" && NumeroCriterio != "0") || ($(this).find('.NumeroParaCriterioDeChaveDeClassificacao').get(0).disabled))) {
-                        var DescricaoModalidade = $.trim((ModalidadeCheck.get(0).name).split(' - ')[1]);
-                        if (NumeroCriterio != "") {
-                            NovaTime += '<div class="ItemModalidade">' + DescricaoModalidade + '[' + NumeroCriterio + ']' + '</div>';
-                        } else {
-                            NovaTime += '<div class="ItemModalidade">' + DescricaoModalidade + '</div>';
-                        }
-                    }
-                });
-
-                NovaTime += '</div>';
-                NovaTime += '</div>';
-
-                $('.CorpoDaLista').append(NovaTime);
-
-                $('.ItemListaTime').each(function () {
-                    var Esconder = $(this).find('.ModalidadesTime');
-                    $(Esconder).hide();
-                });
-            }
-
             LimpaCamposCadastraTime();
-
             InvocaModalMensagem(retorno.MensagemRetorno.TituloMensagem, retorno.MensagemRetorno.RetornoMensagens);
             MostrarBotaoFecharModalMensagem(true);
         });
     });
 
-    $('#CadastraTime_Nome').keyup(function () {
+    $('#Times').on('keyup', '#CadastraTime_Nome', function () {
         ValidaCadastroTime();
     });
     
-    $('.CadastraTime_ModalidadeItem').on('click', function () {
+    $('#Times').on('click', '.CadastraTime_ModalidadeItem', 'click', function () {
         ValidaCadastroTime();
     });
     
@@ -202,7 +161,7 @@
         ValidaCadastroTime();
     });
 
-    $('.NumeroParaCriterioDeChaveDeClassificacao').keyup(function () {
+    $('#Times').on('keyup', '.NumeroParaCriterioDeChaveDeClassificacao', function () {
         ValidaCadastroTime();
     });
 
@@ -253,32 +212,6 @@
         });
     };
 
-    /* Funções Horários da Times */
-
-    function PreencheListaHorarios(ListaDeHorarios) {
-        $('#ListaHorarios').get(0).innerHTML = "";
-        if (ListaDeHorarios == null || ListaDeHorarios.length == 0) {
-            $("#ListaHorarios").append('<div class="ListaVazia">Não existem jogos Cadastrados!</div>');
-        } else {
-            if (ListaDeHorarios.length > 0) {
-                var NovaListaHorario = '<div class="ListaHorario_Titulo">';
-                NovaListaHorario += '<div class="ListaHorario_InicioTitulo">Ínicio</div>';
-                NovaListaHorario += '<div class="ListaHorario_TerminoTitulo">Término</div>';
-                NovaListaHorario += '<div class="ListaHorario_StatusTitulo">Status</div>';
-                NovaListaHorario += '</div>';
-                $.each(ListaDeHorarios, function (index) {
-                    var Items = ListaDeHorarios[index].split("|");
-                    NovaListaHorario += '<div class="ListaHorarioItem">';
-                    NovaListaHorario += '<div class="ListaHorario_Inicio">' + Items[0] + '</div>';
-                    NovaListaHorario += '<div class="ListaHorario_Termino">' + Items[1] + '</div>';
-                    NovaListaHorario += '<div class="ListaHorario_Status">' + Items[2] + '</div>';
-                    NovaListaHorario += '</div>';
-                });
-                $("#ListaHorarios").append(NovaListaHorario);
-                DesabilitaExcluirHorario();
-            }
-        }
-    }
 
     /* ----------- Modal Mensagem ----------- */
     function InvocaModalMensagem(Titulo, Mensagem) {
@@ -308,8 +241,22 @@
         }
     }
 
-    $('#BotaoFecharModalMensagem').click(function () {
+    $('#BotaoFecharModalMensagem').click( function () {
         $('#ModalMensagemPrincipal').modal('hide');
+        VoltarParaPaginaListagemTime();
     });
+
+    $('#Times').on('click', '.VoltarParaPaginaTimes', function () {
+        VoltarParaPaginaListagemTime();
+    });
+
+    function VoltarParaPaginaListagemTime() {
+        $.ajax({
+            url: "/Noein/Times_Listagem",
+            success: function (retorno) {
+                $('#Times').get(0).innerHTML = retorno;
+            }
+        });
+    }
 });
 

@@ -1,0 +1,63 @@
+﻿@model List<NoeinModel.Time>
+
+<div class="OpcoesTime">
+    <button class="BotaoPadrao" id="CadastraTime">Cadastrar Time</button>
+    <div class="Pesquisa">
+        <input type="text" id="InputPesquisaTime" name="InputPesquisaTime" value="Pesquisar Time..." />
+        <span class="glyphicon glyphicon-search" aria-hidden="true" id="PesquisaTime"></span>
+        <span class="glyphicon glyphicon-remove" aria-hidden="true" id="LimpaCampoPesquisa"></span>
+    </div>
+</div>
+<div class="ListaDeTimes">
+    <div class="CabecalhoListaDeTimes">
+        <div class="CabecalhoIdTime">
+            Id
+        </div>
+        <div class="CabecalhoNomeTime">
+            Nome
+        </div>
+        <div class="CabecalhoPontuacao">
+            Pontuação
+        </div>
+        <div class="MenuTime">
+        </div>
+    </div>
+    <div class="CorpoDaLista">
+        @if (Model == null || Model.Count == 0)
+            {
+            <div class="ListaVazia">Não existem times cadastrados.</div>
+        }
+        else
+        {
+            foreach (var time in Model)
+            {
+                <div class="ItemListaTime" value="@time.IdTime">
+                    <div class="InformacoesTime" value="@time.IdTime">
+                        <div class="IdTime">@time.IdTime</div>
+                        <div class="NomeTime" value="@time.NomeTime">@time.NomeTime</div>
+                        <div class="Pontuacao">@time.PontuacaoGeral</div>
+                        <div class="MenuTime">
+                            <span class="glyphicon glyphicon-trash RemoveTime" aria-hidden="true"></span>
+                            <span class="glyphicon glyphicon-time FuncaoHorarioTime" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="ModalidadesTime">
+                        @foreach (var modalidade in time.RetornaListaDeModalidade())
+                        {
+                            if (modalidade.Key.Fases.First().Value)
+                            {
+                                var descricao = modalidade.Key.DescricaoModalidade + "[" + modalidade.Value + "]";
+
+                                <div class="ItemModalidade">@descricao</div>
+                            }
+                            else
+                            {
+                                <div class="ItemModalidade">@modalidade.Key.DescricaoModalidade</div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

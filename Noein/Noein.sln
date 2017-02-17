@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noein", "Noein\Noein.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeinModel", "NoeinModel\NoeinModel.csproj", "{9FA3776E-885F-4C9C-90DF-762FCCD34F9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoeinService", "NoeinService\NoeinService.csproj", "{CE1A15D4-7282-4246-8D44-A73454533E50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9FA3776E-885F-4C9C-90DF-762FCCD34F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA3776E-885F-4C9C-90DF-762FCCD34F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA3776E-885F-4C9C-90DF-762FCCD34F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1A15D4-7282-4246-8D44-A73454533E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1A15D4-7282-4246-8D44-A73454533E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1A15D4-7282-4246-8D44-A73454533E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1A15D4-7282-4246-8D44-A73454533E50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

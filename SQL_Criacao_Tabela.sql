@@ -8,8 +8,13 @@ Create Table Usuarios (
 Create Table Campeonatos (	
 	IdCampeonato Int Not Null Identity(1,1),
 	DescricaoCampeonato varchar(150),
-	IdUsuario Int Not Null Foreign Key References Usuarios(IdUsuario),
 	Primary Key (IdCampeonato)
+)
+
+Create Table Permissoes (
+	IdUsuario Int Foreign Key References Usuarios(IdUsuario),
+	IdCampeonato Int Foreign Key References Campeonatos(IdCampeonato),
+	Primary Key (IdUsuario, IdCampeonato)
 )
 
 Create Table MensagensPadrao (
@@ -19,7 +24,7 @@ Create Table MensagensPadrao (
 	Primary Key (IdMensagem)
 )
 
-Create Table Quadra (
+Create Table Quadras (
 	IdCampeonato Int Not Null Foreign Key References Campeonatos(IdCampeonato),
 	IdQuadra Int Not Null Identity(1,1),
 	DescricaoQuadra varchar(150),
@@ -43,6 +48,5 @@ Create Table ModalidadesBasicas (
 Create Table ModalidadesVisiveis(
 	IdCampeonato Int Not Null Foreign Key References Campeonatos(IdCampeonato),
 	IdModalidadeBasica Int Not Null Foreign Key References ModalidadesBasicas(IdModalidadeBasica),
-	Visivel Bit,
 	Primary Key (IdCampeonato, IdModalidadeBasica)
 )

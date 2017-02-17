@@ -32,16 +32,14 @@
 
     IniciaPagina();
     // Interação que esconde as modalidades das outras quadras e mostra apenas da selecionada
-    $('.CorpoDaLista').on('click', '.InformacoesQuadra', function () {
+    $('#Quadras').on('click', '.InformacoesQuadra', function () {
         $('.CorpoDaLista').find('.ModalidadesQuadra').hide()
         $($(this).parent()).find('.ModalidadesQuadra').show()
     });
 
     /* -------- Pesquisar -------- */
     $("#InputPesquisaQuadra").click( function () {
-        if (this.value == "Pesquisar Quadra...") {
-            this.value = "";
-        }
+        this.value = "";
     });
 
     $("#InputPesquisaQuadra").focusout(function () {
@@ -81,13 +79,18 @@
     });
 
     /* Botões de CRUD */
-    $('#CadastraQuadra').click(function () {
-        LimpaCamposCadastraQuadra();
-        ValidaCadastroQuadra();
-        $('#ModalCadastraQuadra').modal('show');
+    $('#Quadras').on('click', '#CadastraQuadra', function () {
+        $.ajax({
+            url: "/Noein/Quadras_Cadastro",
+            success: function (retorno) {
+                $('#Quadras').get(0).innerHTML = retorno;
+                LimpaCamposCadastraQuadra();
+                ValidaCadastroQuadra();
+            }
+        });
     });
 
-    $('.CorpoDaLista').on('click', '.RemoveQuadra', function () {
+    $('#Quadras').on('click', '.RemoveQuadra', function () {
         var nomeQuadra = $($(this).parent()).parent().find('.DescricaoQuadra').get(0).textContent;
         var idQuadra = $($(this).parent()).parent().find('.IdQuadra').get(0).textContent;
 
@@ -103,7 +106,7 @@
         });
     });
 
-    $('.CorpoDaLista').on('click', '.FuncaoHorarioQuadra', function () {
+    $('#Quadras').on('click', '.FuncaoHorarioQuadra', function () {
         LimpaCamposFuncaoHorario();
         
 
@@ -111,7 +114,7 @@
         var idQuadra = $($(this).parent()).parent().find('.IdQuadra').get(0).textContent;
 
         $('#FuncaoHorarioQuadra_IdQuadra').val(idQuadra);
-        $('.ModalFuncaoHorarioQuadraTituloModal').text('Horários - ' + nomeQuadra);
+        $('.Titulo_Operacao').text('Horários - ' + nomeQuadra);
         
         $.getJSON('RetornaListaHorarioDaQuadra', { IdQuadra: idQuadra }, function (retorno) {
             PreencheListaHorarios(retorno.ObjetoRetorno);
@@ -121,7 +124,7 @@
     });
 
     /* Fecha Modais */
-    $('.close').click(function () {
+    $('#Quadras').on('click', '.close', function () {
         $('#ModalCadastraQuadra').modal('hide');
         $('#ModalFuncaoHorarioQuadra').modal('hide');        
         MostrarBotaoFecharModalMensagem(false);
@@ -129,7 +132,7 @@
     });
 
     /* Modal Cadastra Quadra */
-    $('#BotaoCadastraQuadra').click(function () {
+    $('#Quadras').on('click', '#BotaoCadastraQuadra', function () {
         var descricao = $.trim($('#CadastraQuadra_Descricao').val());
         var localizacao = $.trim($('#CadastraQuadra_Localizacao').val());
         var Modalidades = $('.CadastraQuadra_Modalidades').find('.CadastraQuadra_ModalidadeItem');
@@ -142,41 +145,6 @@
         });
 
         $.getJSON('CadastraQuadra', $.param({ Descricao: descricao, Localizacao: localizacao, ListaModalidades: ListaDeModalidades }, true), function (retorno) {
-            if (retorno.MensagemRetorno.TituloMensagem == "Sucesso") {
-                var idQuadra = retorno.ObjetoRetorno;
-
-                /* Adiciona Quadra na Listagem da Página */
-                var NovaQuadra = '<div class="ItemListaQuadra" value="' + idQuadra + '">';
-                NovaQuadra += '<div class="InformacoesQuadra"  value="' + idQuadra + '">';
-                NovaQuadra += '<div class="IdQuadra">' + idQuadra + '</div>';
-                NovaQuadra += '<div class="DescricaoQuadra" value="' + descricao + '">' + descricao + '</div>';
-                NovaQuadra += '<div class="Localizacao">' + localizacao + '</div>';
-                NovaQuadra += '<div class="MenuQuadra">';
-                NovaQuadra += '<span class="glyphicon glyphicon-trash RemoveQuadra" aria-hidden="true"></span>';
-                NovaQuadra += '<span class="glyphicon glyphicon-time FuncaoHorarioQuadra" aria-hidden="true"></span>';
-                NovaQuadra += '</div>';
-                NovaQuadra += '</div>';
-                NovaQuadra += '<div class="ModalidadesQuadra">';
-                Modalidades.each(function () {
-                    if (this.checked) {
-                        var DescricaoModalidade = $.trim((this.name).split(' - ')[1]);
-                        NovaQuadra += '<div class="ItemModalidade">' + DescricaoModalidade + '</div>';
-                    }
-                });
-
-                NovaQuadra += '</div>';
-                NovaQuadra += '</div>';
-
-                $('.CorpoDaLista').append(NovaQuadra);
-
-                $('.ItemListaQuadra').each(function () {
-                    var Esconder = $(this).find('.ModalidadesQuadra');
-                    $(Esconder).hide();
-                });
-            }
-
-            LimpaCamposCadastraQuadra();
-
             InvocaModalMensagem(retorno.MensagemRetorno.TituloMensagem, retorno.MensagemRetorno.RetornoMensagens);
 
             MostrarBotaoFecharModalMensagem(true);

@@ -39,15 +39,19 @@
                                 <tr>
                                     <td class="Time1">@jogo.Time1.NomeTime</td>
                                     <td class="Pontuacoes">
-                                        <div class="PontuacaoPrincipal">
+                                        <div class="PontuacaoPrincipal">                                           
+                                            <div class="W_Time1">W.<input type="checkbox" value="W_Time1" class="ItemWO" disabled/></div>
                                             <div class="ResultadoTime1"><input type="number" min="0" class="InputResultadoTime1" value="@jogo.PontuacaoTime1" /></div>
                                             X
                                             <div class="ResultadoTime2"><input type="number" min="0" class="InputResultadoTime2" value="@jogo.PontuacaoTime2" /></div>
+                                            <div class="W_Time2"><input type="checkbox" value="W_Time2" class="ItemWO" disabled/>W.</div>
                                         </div>
                                         <div class="PontuacaoAdicional">
+                                            <div class="O_Time1">O.<input type="checkbox" value="O_Time1" class="ItemWO" disabled/></div>
                                             <div class="ResultadoTime1"><input type="number" min="0" class="InputResultadoAdicionalTime1" value="@jogo.PontuacaoAdicionalTime1" /></div>
                                             X
                                             <div class="ResultadoTime2"><input type="number" min="0" class="InputResultadoAdicionalTime2" value="@jogo.PontuacaoAdicionalTime2" /></div>
+                                            <div class="O_Time2"><input type="checkbox" value="O_Time2" class="ItemWO" disabled/>O.</div>
                                         </div>
                                     </td>
                                     <td class="Time2">@jogo.Time2.NomeTime</td>

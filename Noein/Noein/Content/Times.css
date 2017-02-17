@@ -171,14 +171,14 @@
 
 #Times .ItemModalidade {
     display: inline-block;
-    width: 18.4%;
+    width: 23%;
     text-align: left;
     padding: 5px;
 }
 
 #Times .ItemModalidade:hover {
     display: inline-block;
-    width: 18.4%;
+    width: 23%;
     text-align: left;
     padding: 5px;
     font-weight: 600;
@@ -217,9 +217,6 @@
     text-align: center;
 }
  
-#Times .ModalCadastraTimeTituloModal { 
-}
-
 #Times .ModalBodyPadrao {
     color: #2688d2;
 }
@@ -254,6 +251,7 @@
     display: inline-block;
     width: 32%;
     padding:3px;
+    color: #2688d2;
 }
 
 #Times .DivBotaoCadastraTime{
@@ -281,7 +279,6 @@
 }
 
 #Times .ListaHorarioTimes{
-    margin-top: -10px;
     margin-bottom:15px; 
 }
 
@@ -388,4 +385,28 @@
     border-radius: 3px; 
     margin-left: auto;
     margin-left: 5px;
+}
+
+#Times .Times_Cadastro {
+    border: 1px dotted #2688d2;
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Nova Flat';
+    color: #2688d2;
+}
+
+#Times .Titulo_Operacao {
+    background-color: #A8CFED;
+    color: #2688d2;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#Times .VoltarParaPaginaTimes {
+    color: #2688d2;
+    cursor: pointer;    
+    display: inline-block;
+    margin-left: 10%;
+    margin-bottom: 10px;
 }

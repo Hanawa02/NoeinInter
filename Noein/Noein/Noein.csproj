@@ -135,6 +135,7 @@
     <Content Include="Content\Conta\Login1.css" />
     <Content Include="Content\FasesDeClassificacao.css" />
     <Content Include="Content\HorarioJogos.css" />
+    <Content Include="Content\Modalidades.css" />
     <Content Include="Content\Quadras.css" />
     <Content Include="Content\Resultados.css" />
     <Content Include="Content\Times.css" />
@@ -143,7 +144,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\MenuSuperior.css" />
     <Content Include="Images\BackGroundRadioButton.png" />
-    <Content Include="Images\noein.ico.png" />
+    <Content Include="Images\noein.png" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\Personalizados\Conta\Login1.js">
@@ -153,6 +154,7 @@
     <Content Include="Scripts\Personalizados\FasesDeClassificacao.js" />
     <Content Include="Scripts\Personalizados\HorarioJogos.js" />
     <Content Include="Scripts\Personalizados\MenuSuperior.js" />
+    <Content Include="Scripts\Personalizados\Modalidades.js" />
     <Content Include="Scripts\Personalizados\Quadras.js" />
     <Content Include="Scripts\Personalizados\Resultados.js" />
     <Content Include="Scripts\Personalizados\Times.js" />
@@ -192,6 +194,13 @@
     <Content Include="Views\Noein\FasesDeClassificacaoPartial.cshtml" />
     <Content Include="Views\Noein\HorarioJogos.cshtml" />
     <Content Include="Views\Noein\Resultados.cshtml" />
+    <Content Include="Views\Noein\Modalidades.cshtml" />
+    <Content Include="Views\Noein\Times_Cadastro.cshtml" />
+    <Content Include="Views\Noein\Times_Funcoes_Horario.cshtml" />
+    <Content Include="Views\Noein\Times_Listagem.cshtml" />
+    <Content Include="Views\Noein\Quadras_Cadastro.cshtml" />
+    <Content Include="Views\Noein\Quadras_Funcoes_Horario.cshtml" />
+    <Content Include="Views\Noein\Quadras_Listagem_Horarios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NoeinModel\NoeinModel.csproj">

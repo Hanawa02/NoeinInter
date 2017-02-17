@@ -1,0 +1,35 @@
+﻿@model List<NoeinModel.Modalidade>
+
+<div class="VoltarParaPaginaTimes"><span class="glyphicon glyphicon-arrow-left IconeVoltarPaginaTimes"  aria-hidden="true"></span> Voltar</div>
+<div class="Times_Cadastro">
+    <div class="Titulo_Operacao">Cadastrar Time</div>
+    <div class="CadastraTime_InformacoesTime">
+        Nome:
+        <input type="text" id="CadastraTime_Nome" value="" />
+    </div>
+    <div class="CadastraTime_Modalidades">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                var nomeLabel = "Modalidade " + item.IdModalidade;
+                <div class="CadastraTime_ItemModalidade">
+                    @if (item.Fases.ElementAt(0).Value)
+                    {
+                        <input type="number" name="@item.IdModalidade|NumeroParaCriterioDeChaveDeClassificacao" class="NumeroParaCriterioDeChaveDeClassificacao" min="0" />
+                    }
+                    else
+                    {
+                        <input type="number" name="@item.IdModalidade|NumeroParaCriterioDeChaveDeClassificacao" class="NumeroParaCriterioDeChaveDeClassificacao" disabled />
+                    }
+                    <input type="checkbox" value="@item.IdModalidade" name="@item.IdModalidade - @item.DescricaoModalidade" class="CadastraTime_ModalidadeItem" />
+                    @item.DescricaoModalidade
+
+                </div>
+            }
+        }
+    </div>
+    <div class="DivBotaoCadastraTime">
+        <button id="BotaoCadastraTime" class="BotaoPadrao">Cadastrar</button>
+    </div>
+</div>

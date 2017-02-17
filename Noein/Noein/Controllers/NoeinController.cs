@@ -57,10 +57,10 @@ namespace Noein.Controllers
             ViewBag.NomeUsuario = "Laura Caroline";
             ViewBag.IdUsuario = 128;
             /* Serviço que busca as quadras por campeonato */
-            var listaModalidades = new List<ModalidadesBasicas>();            
-            listaModalidades.AddRange(ListaGeralModalidades.FindAll(x => x.Codigo < 6));
-            var listaModalidades2 = new List<ModalidadesBasicas>();
-            listaModalidades2.Add(new ModalidadesBasicas(6, "Atletismo"));
+            var listaModalidades = new List<Modalidade>();            
+            listaModalidades.AddRange(BDTemporario.AcessaBD().RetornaModalidadesCampeonato().FindAll(x => x.IdModalidade < 6));
+            var listaModalidades2 = new List<Modalidade>();
+            listaModalidades2.AddRange(BDTemporario.AcessaBD().RetornaModalidadesCampeonato().FindAll(x => x.IdModalidade == 6));
             if (ListaQuadras.Count == 0)
             {
                 ListaQuadras.Add(new Quadra(1, "Quadra 1", "Ferreira Pacheco", listaModalidades));
@@ -68,20 +68,20 @@ namespace Noein.Controllers
                 ListaQuadras.Add(new Quadra(3, "Piscina Olímpica", "Ferreira Pacheco", listaModalidades2));
 
             }
-            ViewBag.ModalidadesVisiveis = ListaGeralModalidades;
+            ViewBag.Modalidades = BDTemporario.AcessaBD().RetornaModalidadesCampeonato();
             return View("Quadras", ListaQuadras);
         }
 
         public JsonResult CadastraQuadra(string Descricao, string Localizacao, List<string> ListaModalidades)
         {
             //Adiciona Quadra ao campeonato
-            var listaDeModalidades = ListaGeralModalidades.FindAll(x => ListaModalidades.Contains(x.Codigo.ToString()));
+            var listaDeModalidades = BDTemporario.AcessaBD().RetornaModalidadesCampeonato().FindAll(x => ListaModalidades.Contains(x.IdModalidade.ToString()));
 
             var quadraAdicionada = new Quadra((ListaQuadras.Last().IdQuadra + 1), Descricao, Localizacao, listaDeModalidades);
 
             ListaQuadras.Add(quadraAdicionada);
 
-            var retorno = new RetornoPadrao(new Mensagem(1, "Sucesso", "Cadastro realizado com sucesso!"), quadraAdicionada.IdQuadra);
+            var retorno = new RetornoPadrao(new Mensagem(1, "Sucesso", "Cadastro realizado com sucesso!"), null);//, quadraAdicionada.IdQuadra);
 
             return Json(retorno, JsonRequestBehavior.AllowGet);
         }
@@ -98,14 +98,22 @@ namespace Noein.Controllers
             return Json(retorno, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult RetornaListaHorarioDaQuadra(string IdQuadra)
+        public PartialViewResult Quadras_Listagem_Horario(string IdQuadra)
         {
             //Retorna horários da quadra
             var quadra = ListaQuadras.Find(x => x.IdQuadra.ToString() == IdQuadra);
-            
-            var retorno = new RetornoPadrao(new Mensagem(1, "", ""), Conversor.DicionarioHorarioDisponivelParaObjetoJQuery(quadra.RetornaDicionarioHorarioJogo()));
+           
+            return PartialView("Quadras_Listagem_Horario", quadra.RetornaDicionarioHorarioJogo());
+        }
 
-            return Json(retorno, JsonRequestBehavior.AllowGet);
+        public PartialViewResult Quadras_Funcoes_Horario(string IdQuadra)
+        {
+            return PartialView("Quadras_Funcoes_Horario", IdQuadra);
+        }
+
+        public PartialViewResult Quadras_Cadastro()
+        {
+            return PartialView("Quadras_Cadastro", BDTemporario.AcessaBD().RetornaModalidadesCampeonato());
         }
 
         public JsonResult CadastraHorarioDisponivelDaQuadra(string IdQuadra, string DataInicio, string DataTermino, string Intervalo)
@@ -162,10 +170,11 @@ namespace Noein.Controllers
 
         public ActionResult Times()
         {
-            //Lista times do campeonato
-            ViewBag.NomeCampeonato = "Inter";
-            ViewBag.NomeUsuario = "Laura Caroline";
-            ViewBag.IdUsuario = 128;
+            return View("Times");
+        }
+        
+        public PartialViewResult Times_Listagem()
+        {
             /* Serviço que busca as times por campeonato */
             var modalidades = BDTemporario.AcessaBD().RetornaModalidadesCampeonato();
             var dicionarioU = new Dictionary<Modalidade, int>();
@@ -174,7 +183,7 @@ namespace Noein.Controllers
             var dicionarioE = new Dictionary<Modalidade, int>();
             modalidades.ForEach(x =>
             {
-                if(x.IdModalidade < 3)
+                if (x.IdModalidade < 3)
                 {
                     dicionarioU.Add(x, x.IdModalidade + 2);
                     dicionarioE.Add(x, x.IdModalidade + 2);
@@ -192,17 +201,36 @@ namespace Noein.Controllers
             if (ListaTimes.Count == 0)
             {
                 var unif = new Time(2, "Unificada", 10, dicionarioU);
-                unif.InsereJogo(new Horario(99, new DateTime(2017, 01, 15, 16, 00, 00), 30), 8, new SexoModalidades(2, "Feminino"));
+                unif.InsereJogo(new Horario(99, new DateTime(2017, 01, 15, 16, 00, 00), 30), 8, SexoModalidades.Feminino);
                 ListaTimes.Add(unif);
                 ListaTimes.Add(new Time(1, "Medicina", 2, dicionarioM));
                 ListaTimes.Add(new Time(3, "Direito", 8, dicionarioD));
                 ListaTimes.Add(new Time(4, "Elétrica", 0, dicionarioE));
             }
             ViewBag.Modalidades = modalidades;
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[0].Fases.Add(new TipoClassificacao_Chave(ListaTimes), true);
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[1].Fases.Add(new TipoClassificacao_Chave(ListaTimes), false);
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[2].Fases.Add(new TipoClassificacao_Chave(ListaTimes), true);
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[3].Fases.Add(new TipoClassificacao_Chave(ListaTimes), true);
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[4].Fases.Add(new TipoClassificacao_Chave(ListaTimes), true);
+            BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[5].Fases.Add(new TipoClassificacao_Chave(ListaTimes), false);
 
-            return View("Times", ListaTimes);
+            return PartialView("Times_Listagem", ListaTimes);
         }
-        
+
+        public PartialViewResult Times_Cadastro()
+        {
+            return PartialView("Times_Cadastro", BDTemporario.AcessaBD().RetornaModalidadesCampeonato());
+        }
+
+        public PartialViewResult Times_Funcoes_Horario(string IdTime)
+        {
+            var time = ListaTimes.Find(x => x.IdTime.ToString() == IdTime);
+
+            ViewBag.NomeTime = time.NomeTime;
+
+            return PartialView("Times_Funcoes_Horario", time.RetornaDicionarioHorarioJogo());
+        }
         public JsonResult CadastraTime(string Nome, List<string> ListaModalidades)
         {            
             //Adiciona Time no campeonato
@@ -235,7 +263,7 @@ namespace Noein.Controllers
 
             ListaTimes.Remove(timeRemover);
 
-            var retorno = new RetornoPadrao(new Mensagem(1, "Sucesso", "Quadra removida com sucesso!"), null);
+            var retorno = new RetornoPadrao(new Mensagem(1, "Sucesso", "Time removido com sucesso!"), null);
 
             return Json(retorno, JsonRequestBehavior.AllowGet);
         }
@@ -313,7 +341,7 @@ namespace Noein.Controllers
             var ListaJogos = new List<Jogo>();
             var jogo1 = new Jogo(1, ListaTimes.Find(x => x.IdTime == 2), ListaTimes.Find(x => x.IdTime == 1), BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[3], ListaQuadras.ElementAt(0).IdQuadra, BDTemporario.AcessaBD().RetornaHorario(new DateTime(2017, 06, 18, 08, 15, 00), 60), 8, 2, null, null);
             var jogo2 = new Jogo(2, ListaTimes.Find(x => x.IdTime == 3), ListaTimes.Find(x => x.IdTime == 4), BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[2], ListaQuadras.ElementAt(1).IdQuadra, BDTemporario.AcessaBD().RetornaHorario(new DateTime(2017, 06, 19, 09, 15, 00), 30), 1, 1, 3, 2);
-            var jogo3 = new Jogo(3, ListaTimes.Find(x => x.IdTime == 2), ListaTimes.Find(x => x.IdTime == 3), BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[1], ListaQuadras.ElementAt(1).IdQuadra, BDTemporario.AcessaBD().RetornaHorario(new DateTime(2017, 06, 18, 09, 45, 00), 30));
+            var jogo3 = new Jogo(3, ListaTimes.Find(x => x.IdTime == 2), ListaTimes.Find(x => x.IdTime == 3), BDTemporario.AcessaBD().RetornaModalidadesCampeonato()[1], ListaQuadras.ElementAt(1).IdQuadra, BDTemporario.AcessaBD().RetornaHorario(new DateTime(2017, 06, 18, 09, 45, 00), 30), -1, 0, null, null);
             ListaJogos.Add(jogo1);
             ListaJogos.Add(jogo2);
             ListaJogos.Add(jogo3);
@@ -330,5 +358,12 @@ namespace Noein.Controllers
         }
         
         #endregion
+
+        public ActionResult Modalidades()
+        {
+            var modalidades = BDTemporario.AcessaBD().RetornaModalidadesCampeonato();
+
+            return View("Modalidades", null);
+        }
     }
 }

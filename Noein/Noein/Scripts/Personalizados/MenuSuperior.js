@@ -1,4 +1,9 @@
 ﻿$(function () {
+    $('#Menu_Superior_Modalidades').click(function () {
+        var UrlParticionada = (window.location.href).split("/Noein/");
+        window.location.href = UrlParticionada[0] + "/Noein/Modalidades";
+    });
+
     $('#Menu_Superior_Times').click(function () {
         var UrlParticionada = (window.location.href).split("/Noein/");
         window.location.href = UrlParticionada[0] + "/Noein/Times";

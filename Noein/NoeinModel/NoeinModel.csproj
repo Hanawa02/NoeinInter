@@ -46,10 +46,13 @@
     <Compile Include="Etapa.cs" />
     <Compile Include="Geral\AgendaTime.cs" />
     <Compile Include="Geral\Conversor.cs" />
+    <Compile Include="Geral\ItemEnum.cs" />
     <Compile Include="Geral\SexoModalidades.cs" />
     <Compile Include="Geral\ModalidadesBasicas.cs" />
     <Compile Include="Geral\Mensagem.cs" />
     <Compile Include="Geral\RetornoPadrao.cs" />
+    <Compile Include="Geral\TipoDeModalidade.cs" />
+    <Compile Include="Geral\TiposClassificacao.cs" />
     <Compile Include="Geral\Utilidades.cs" />
     <Compile Include="Horario.cs" />
     <Compile Include="HorariosJogos.cs" />
